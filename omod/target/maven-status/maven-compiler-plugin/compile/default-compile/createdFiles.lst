@@ -1,0 +1,6 @@
+org/openmrs/module/prescription/web/controller/PrescriptionController.class
+org/openmrs/module/prescription/page/controller/PrescriptionPageController.class
+org/openmrs/module/prescription/extension/html/AdminList.class
+org/openmrs/module/prescription/fragment/controller/PrescriptionsFragmentController.class
+org/openmrs/web/servlet/DownloadPrescriptionServlet.class
+org/openmrs/module/prescription/page/controller/PrescriptionsPageController.class

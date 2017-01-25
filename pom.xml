@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+
+	<!-- mysql -u openmrs -p -h 127.0.0.1 -P 3316 -->	
+	<modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.openmrs.maven.parents</groupId>
+        <artifactId>maven-parent-openmrs-module</artifactId>
+        <version>1.1.0</version>
+    </parent>
+
+	<groupId>org.openmrs.module</groupId>
+	<artifactId>prescription</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>Prescription</name>
+	<description>Module allows to add medications as a list, and print them. Medication-list is taken of a csv-file. To change it, and the location of prescriptions, please change the config.properties.</description>
+
+	<url>https://wiki.openmrs.org/x/FQ4z</url>
+
+	<scm>
+		<connection>scm:git:git@github.com:openmrs/openmrs-module-prescription.git</connection>
+		<developerConnection>scm:git:git@github.com:openmrs/openmrs-module-prescription.git</developerConnection>
+		<url>https://github.com/openmrs/openmrs-module-prescription/</url>
+	</scm>
+
+	<modules>
+		<module>api</module>
+		<module>omod</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- https://mvnrepository.com/artifact/com.itextpdf/kernel -->
+			<dependency>
+			    <groupId>com.itextpdf</groupId>
+			    <artifactId>itextpdf</artifactId>
+			    <version>5.4.3</version>
+			</dependency>
+
+
+			<!-- Importing versions from refapp distro -->
+            <dependency>
+                <groupId>org.openmrs.distro</groupId>
+                <artifactId>referenceapplication</artifactId>
+                <version>2.4</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+           
+
+		</dependencies>
+	</dependencyManagement>
+
+	<properties>
+		<openmrsPlatformVersion>1.11.6</openmrsPlatformVersion>
+	</properties>
+
+	
+
+	
+
+</project>
