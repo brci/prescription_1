@@ -1,45 +1,40 @@
 package org.openmrs.module.prescription.api.print;
 
 import java.io.FileOutputStream;
-import java.util.Date;
 
-import com.itextpdf.text.Anchor;
-import com.itextpdf.text.BadElementException;
-import com.itextpdf.text.BaseColor;
-import com.itextpdf.text.Chapter;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Element;
-import com.itextpdf.text.Font;
-//import com.itextpdf.text.List;
-import com.itextpdf.text.ListItem;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.Phrase;
-import com.itextpdf.text.Section;
-import com.itextpdf.text.pdf.PdfPCell;
-import com.itextpdf.text.pdf.PdfPTable;
-import com.itextpdf.text.pdf.PdfWriter;
-import com.itextpdf.text.PageSize;
+//com.lowagie.text
+//com.itextpdf.text
+import com.lowagie.text.Document;
+import com.lowagie.text.DocumentException;
+import com.lowagie.text.Element;
+import com.lowagie.text.Font;
+import com.lowagie.text.PageSize;
+import com.lowagie.text.Paragraph;
+import com.lowagie.text.Rectangle;
+import com.lowagie.text.Chunk;
+
+//com.lowagie.text.pdf
+//com.itextpdf.text.pdf
+import com.lowagie.text.pdf.PdfPCell;
+import com.lowagie.text.pdf.PdfPTable;
+import com.lowagie.text.pdf.PdfWriter;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
-import org.openmrs.module.prescription.Prescription;
+import java.util.Date;
 import java.util.List;
 
-import com.itextpdf.text.Rectangle;
-import com.itextpdf.text.pdf.PdfContentByte;
-import com.itextpdf.text.Chunk;
+import org.openmrs.module.prescription.Prescription;
 
 public class PdfTemplate {
 	
 	public static final Chunk NEWLINE = new Chunk("\n");
 	
-	private static Font fontSmallBold = new Font(Font.FontFamily.TIMES_ROMAN, 11, Font.BOLD);
+	private static Font fontSmallBold = new Font(Font.TIMES_ROMAN, 11, Font.BOLD);
 	
-	private static Font fontSmallNormal = new Font(Font.FontFamily.TIMES_ROMAN, 11, Font.NORMAL);
+	private static Font fontSmallNormal = new Font(Font.TIMES_ROMAN, 11, Font.NORMAL);
 	
-	private static Font fontSmallerNormal = new Font(Font.FontFamily.TIMES_ROMAN, 10, Font.NORMAL);
+	private static Font fontSmallerNormal = new Font(Font.TIMES_ROMAN, 10, Font.NORMAL);
 	
 	public void writeOutPdf(List<Prescription> prescriptions, String filename, String add1, String add2, String add3,
 	        String patientName) {

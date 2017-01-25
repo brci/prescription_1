@@ -14,7 +14,7 @@ import org.openmrs.module.prescription.Drug;
 
 import java.io.FileOutputStream;
 import java.io.File;
-import com.itextpdf.text.*;
+//import com.itextpdf.text.*;
 
 import org.openmrs.module.prescription.api.print.PdfTemplate;
 

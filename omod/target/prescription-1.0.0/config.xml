@@ -11,7 +11,7 @@
 	<!-- Base Module Properties -->
 	<id>prescription</id>
 	<name>Prescription</name>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<package>org.openmrs.module.prescription</package>
 	<author>bci</author>
 	<description>
