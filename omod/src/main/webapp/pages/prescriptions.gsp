@@ -47,9 +47,9 @@ ${ ui.includeFragment("uicommons", "infoAndErrorMessage")}
             	<td> ${ ui.format(it.description) }</td>
               <td> ${ ui.format(it.dose) }</td>   
                
-					<% if (it.prescriptionFile!=null && it.prescriptionFile.size() > 15) { %>             
+					<% if (it.prescriptionFile!=null) { %>             
                               
-               	<td> ${ ui.format(it.prescriptionFile.substring(it.prescriptionFile.size()-15,it.prescriptionFile.size())) }</td>
+               	<td> ${ ui.format(it.prescriptionFile) }</td>
                	
 					<% } else { %>
 					 
@@ -59,7 +59,7 @@ ${ ui.includeFragment("uicommons", "infoAndErrorMessage")}
 
 
           <% if ( it.prescriptionFile==null || (
-          it.prescriptionFile!=null && it.prescriptionFile.size() > 15 && it.prescriptionFile.substring(it.prescriptionFile.size()-15,it.prescriptionFile.size()-5).equals(today) 
+          it.prescriptionFile!=null && it.prescriptionFile.size() > 10 && it.prescriptionFile.substring(0,it.prescriptionFile.size()-5).equals(today) 
           ) ) { %>  
           
                <td> 

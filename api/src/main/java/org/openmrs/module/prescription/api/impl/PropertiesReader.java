@@ -34,8 +34,6 @@ public class PropertiesReader {
 			
 			prop.load(input);
 			
-			System.out.println(prop.getProperty("prescription_file_path"));
-			
 		}
 		catch (IOException ex) {
 			ex.printStackTrace();

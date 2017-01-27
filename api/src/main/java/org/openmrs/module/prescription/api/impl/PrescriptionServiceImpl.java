@@ -14,9 +14,6 @@ import org.openmrs.module.prescription.Drug;
 
 import java.io.FileOutputStream;
 import java.io.File;
-//import com.itextpdf.text.*;
-
-import org.openmrs.module.prescription.api.print.PdfTemplate;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -97,6 +94,14 @@ public class PrescriptionServiceImpl extends BaseOpenmrsService implements Presc
 	}
 	
 	@Transactional(readOnly = true)
+	public List<Prescription> getAllPrescriptionsByFile(String fileName) throws APIException {
+		if (fileName == null) {
+			return null;
+		}
+		return this.dao.getAllPrescriptionsByFile(fileName);
+	}
+	
+	@Transactional(readOnly = true)
 	public HashMap<Integer, Prescription> getAllPrescriptionsMap(Patient patient) throws APIException,
 	        IllegalArgumentException {
 		
@@ -122,7 +127,7 @@ public class PrescriptionServiceImpl extends BaseOpenmrsService implements Presc
 		return this.dao.getAllPrescriptionsGrouped(patient);
 	}
 	
-	public boolean printPrescriptions(List<Prescription> prescriptions, String filename, String patientName) {
+	public String[] getAddressToPrint() {
 		
 		if (properties == null) {
 			PropertiesReader propertiesReader = new PropertiesReader();
@@ -130,14 +135,12 @@ public class PrescriptionServiceImpl extends BaseOpenmrsService implements Presc
 			properties = propertiesReader.readProperties();
 		}
 		
-		System.out.println("Print service: " + prescriptions.size());
+		String[] result = new String[3];
+		result[0] = properties.getProperty("prescription_address_1");
+		result[1] = properties.getProperty("prescription_address_1");
+		result[2] = properties.getProperty("prescription_address_1");
 		
-		PdfTemplate pt = new PdfTemplate();
-		pt.writeOutPdf(prescriptions, properties.getProperty("prescription_file_path") + filename + ".pdf",
-		    properties.getProperty("prescription_address_1"), properties.getProperty("prescription_address_2"),
-		    properties.getProperty("prescription_address_3"), patientName);
-		
-		return true;
+		return result;
 	}
 	
 	public List<Drug> getAllDrugs() {
@@ -168,21 +171,10 @@ public class PrescriptionServiceImpl extends BaseOpenmrsService implements Presc
 		//if(druglist==null)
 		druglist = drugRetriever.getDrugListExceptOne(id);
 		return druglist;
-	}
-	
+	}	
 	*/
 	public String getDrugDescriptionById(Integer id) {
 		return (String) druglistMap.get(id);
-	}
-	
-	public String getPrescriptionsFolder() {
-		
-		if (properties == null) {
-			PropertiesReader propertiesReader = new PropertiesReader();
-			properties = propertiesReader.readProperties();
-		}
-		
-		return (properties.getProperty("prescription_file_path"));
 	}
 	
 }

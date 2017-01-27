@@ -57,12 +57,35 @@ public class PrescriptionDao {
 		List items = new ArrayList<Prescription>();
 		
 		try {
-			String sql = "SELECT prescription_id,uuid,patient_id,drug_id,description,dose,advice,dispensed,prescription_date_created,prescription_file from prescription p where p.patient_id = :p_id";
+			String sql = "SELECT prescription_id,uuid,patient_id,drug_id,description,dose,advice,prescription_date_created,prescription_file from prescription p where p.patient_id = :p_id";
 			SQLQuery query = this.sessionFactory.getCurrentSession().createSQLQuery(sql)
 			        .addEntity((Class) Prescription.class);
 			query.setParameter("p_id", (Object) patient.getPatientId());
 			items = query.list();
 			System.out.println("size " + items.size());
+			return items;
+		}
+		catch (DAOException d) {
+			d.printStackTrace();
+			return items;
+		}
+	}
+	
+	public List<Prescription> getAllPrescriptionsByFile(String fileName) throws DAOException {
+		List items = new ArrayList<Prescription>();
+		
+		try {
+			String sql = "SELECT prescription_id,uuid,patient_id,drug_id,description,dose,advice,prescription_date_created,prescription_file from prescription p where p.prescription_file = :p_file ";
+			sql = sql + " AND prescription_file IS NOT NULL order by prescription_id ASC";
+			
+			SQLQuery query = this.sessionFactory.getCurrentSession().createSQLQuery(sql)
+			        .addEntity((Class) Prescription.class);
+			query.setParameter("p_file", fileName);
+			
+			if (query.list().size() > 0)
+				items = query.list();
+			System.out.println("size " + items.size());
+			
 			return items;
 		}
 		catch (DAOException d) {

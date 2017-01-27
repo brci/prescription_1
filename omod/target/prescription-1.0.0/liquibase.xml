@@ -15,12 +15,12 @@
  
  	<!-- Uncomment the changeset below if you want to make the Item class persistable, see also Item and PrescriptionDaoTest -->
  	
-	<changeSet id="prescription-2016-08-02-12-21" author="bci">
+	<changeSet id="prescription-2017-01-01-12-21" author="bci">
 		<preConditions onFail="MARK_RAN">
 			<not><tableExists tableName="prescription"/></not>
 		</preConditions>
 		<comment>
-			Creating the prescription_item table
+			Creating the prescription table
 		</comment>
 		<createTable tableName="prescription">
 			<column name="prescription_id" type="int" autoIncrement="true">
@@ -30,17 +30,16 @@
 				<constraints nullable="false" unique="true"></constraints>
 			</column>
 			<!--
-			<column name="owner" type="int" /-->		
+			<column name="owner" type="int" /
+			-->		
 
 			<column name="description" type="varchar(255)" />
 			<column name="patient_id" type="int" />
 			<column name="drug_id" type="int" />
 			<column name="dose" type="varchar(255)" />	
 			<column name="advice" type="varchar(255)" />	
-   			<column name="dispensed" defaultValueBoolean="false" type="boolean"> 	
-				<constraints nullable="false" />
-			</column>
-			
+   			<column name="prescription_date_created" type="datetime" />
+			<column name="prescription_file" type="varchar(255)" />
 
 			<!--
 			<column name="creator" type="int" />
@@ -53,30 +52,13 @@
 			<column name="date_voided" type="datetime" />
 			<column name="voided_by" type="int" />
 			<column name="void_reason" type="varchar(255)" />
-		-->
-
-	
-
+			-->
 		
 		</createTable>
         <!--addForeignKeyConstraint constraintName="prescription_owner_fk" baseTableName="prescription" baseColumnNames="owner"  referencedTableName="users"
                                  referencedColumnNames="user_id" /-->
     </changeSet>
 
-
-
-	<changeSet id="prescription-2016-11-01-12-21" author="bci">
-		<preConditions onFail="MARK_RAN">
-			<tableExists tableName="prescription"/>
-		</preConditions>
-    	<addColumn tableName="prescription">
-    		<column name="prescription_date_created" type="datetime" />
-			<column name="prescription_file" type="varchar(255)" />
-    	</addColumn>
-	</changeSet>
-
-
  
 </databaseChangeLog>
 
-<!--prescription_id,uuid,description,medication,dose,dispensed  -->

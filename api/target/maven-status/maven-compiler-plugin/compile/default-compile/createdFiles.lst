@@ -5,6 +5,5 @@ org/openmrs/module/prescription/api/impl/CSVReader.class
 org/openmrs/module/prescription/PrescriptionActivator.class
 org/openmrs/module/prescription/api/dao/PrescriptionDao.class
 org/openmrs/module/prescription/api/PrescriptionService.class
-org/openmrs/module/prescription/api/print/PdfTemplate.class
 org/openmrs/module/prescription/Drug.class
 org/openmrs/module/prescription/api/impl/PrescriptionServiceImpl.class

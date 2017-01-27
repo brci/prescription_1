@@ -33,11 +33,6 @@ import org.openmrs.api.context.Context;
 
 public class PrescriptionsFragmentController {
 	
-	/*
-	public void controller(FragmentModel model, @SpringBean("userService") UserService service) {
-		model.addAttribute("users", service.getAllUsers());
-	}
-	*/
 	public void controller(FragmentModel model, @FragmentParam("patientId") Patient patient,
 	        @SpringBean("prescription.PrescriptionService") PrescriptionService service) {
 		

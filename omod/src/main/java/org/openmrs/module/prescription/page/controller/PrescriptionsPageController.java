@@ -105,7 +105,6 @@ public class PrescriptionsPageController {
 							
 							String patientName = patient.getPerson().getFamilyName() + "_"
 							        + patient.getPerson().getGivenName();
-							prescriptionFileName = patientName + "_" + prescriptionFileName;
 							
 							for (int i = 0; i < pIds.length; i++) {
 								System.out.println("" + pIds[i]);
@@ -117,7 +116,6 @@ public class PrescriptionsPageController {
 								current.setPrescriptionDateCreated(cal.getTime());
 								service.saveItem(current);
 							}
-							service.printPrescriptions(printPrescriptions, prescriptionFileName, patientName);
 						}
 					}
 				}

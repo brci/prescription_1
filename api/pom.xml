@@ -15,7 +15,6 @@
 	
 	<dependencies>
 
-		<!-- https://mvnrepository.com/artifact/com.itextpdf/kernel -->
 		<dependency>
 			<!--
 		    <groupId>com.itextpdf</groupId>

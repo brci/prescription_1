@@ -67,20 +67,20 @@ public interface PrescriptionService extends OpenmrsService {
 	public List<Prescription> getAllPrescriptions(Patient var1) throws APIException, IllegalArgumentException;
 	
 	@Authorized
+	public List<Prescription> getAllPrescriptionsByFile(String fileName) throws APIException;
+	
+	@Authorized
 	public HashMap<Integer, Prescription> getAllPrescriptionsMap(Patient var1) throws APIException, IllegalArgumentException;
 	
 	@Authorized
 	public List<String> getAllPrescriptionsGrouped(Patient var1) throws APIException, IllegalArgumentException;
 	
-	@Authorized
-	public boolean printPrescriptions(List<Prescription> prescriptions, String filename, String patientName);
+	public String[] getAddressToPrint();
 	
 	public List<Drug> getAllDrugs();
 	
 	//public List<Drug> getAllDrugsExceptOne(Integer id);
 	
 	public String getDrugDescriptionById(Integer id);
-	
-	public String getPrescriptionsFolder();
 	
 }

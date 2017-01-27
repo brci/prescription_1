@@ -40,10 +40,6 @@ public class Prescription extends BaseOpenmrsObject {
 	private String advice;
 	
 	@Basic
-	@Column(name = "dispensed")
-	private boolean dispensed;
-	
-	@Basic
 	@Column(name = "prescription_file", length = 255)
 	private String prescriptionFile;
 	
@@ -104,14 +100,6 @@ public class Prescription extends BaseOpenmrsObject {
 	
 	public void setAdvice(String advice) {
 		this.advice = advice;
-	}
-	
-	public boolean getDispensed() {
-		return this.dispensed;
-	}
-	
-	public void setDispensed(boolean dispensed) {
-		this.dispensed = dispensed;
 	}
 	
 	public String getPrescriptionFile() {

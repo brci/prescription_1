@@ -23,7 +23,7 @@
               <tr>                
                                              
                <td>
-               <a href="${ ui.format('/openmrs-standalone/moduleServlet/prescription/downloadPrescriptionServlet' + '?filename=' + it + '.pdf') }" target="_blank">${ ui.format(it.substring(it.size()-15,it.size())) }</a>
+               <a href="${ ui.format('/openmrs-standalone/moduleServlet/prescription/downloadPrescriptionServlet' + '?filename=' + it) }" target="_blank">${ ui.format(it) }</a>
                </td>
                                              
               </tr>
