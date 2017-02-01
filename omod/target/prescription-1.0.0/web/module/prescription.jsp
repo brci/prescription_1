@@ -5,19 +5,6 @@
 <h2><spring:message code="prescription-omod.title" /></h2>
 
 <br/>
-<table>
-  <tr>
-   <th>User Id</th>
-   <th>Username</th>
-  </tr>
-  <!--
-  <c:forEach var="user" items="${users}">
-      <tr>
-        <td>${user.userId}</td>
-        <td>${user.systemId}</td>
-      </tr>		
-  </c:forEach>
-  -->
-</table>
+<p>Please add 3 address lines to runtime.properties</p>
 
 <%@ include file="/WEB-INF/template/footer.jsp"%>

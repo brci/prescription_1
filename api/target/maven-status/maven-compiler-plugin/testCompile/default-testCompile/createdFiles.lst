@@ -1,2 +1,2 @@
-org/openmrs/module/prescription/api/dao/PrescriptionDaoTest.class
 org/openmrs/module/prescription/api/PrescriptionServiceTest.class
+org/openmrs/module/prescription/dao/PrescriptionDaoTest.class
