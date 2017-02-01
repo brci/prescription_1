@@ -1,64 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
- 
+
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
- 
-    <!--
-    	See http://wiki.openmrs.org/display/docs/Module+liquibase+File for 
-    	documentation on this file.
-    
-        See http://www.liquibase.org/manual/home#available_database_refactorings
-        for a list of supported elements and attributes
-    -->
- 
- 	<!-- Uncomment the changeset below if you want to make the Item class persistable, see also Item and PrescriptionDaoTest -->
- 	
+
+	<!-- See http://wiki.openmrs.org/display/docs/Module+liquibase+File for 
+		documentation on this file. See http://www.liquibase.org/manual/home#available_database_refactorings 
+		for a list of supported elements and attributes -->
+
+	<!-- Uncomment the changeset below if you want to make the Item class persistable, 
+		see also Item and PrescriptionDaoTest -->
+
 	<changeSet id="prescription-2017-01-01-12-21" author="bci">
 		<preConditions onFail="MARK_RAN">
-			<not><tableExists tableName="prescription"/></not>
+			<not>
+				<tableExists tableName="prescription" />
+			</not>
 		</preConditions>
 		<comment>
 			Creating the prescription table
 		</comment>
 		<createTable tableName="prescription">
 			<column name="prescription_id" type="int" autoIncrement="true">
-				<constraints primaryKey="true" nullable="false"/>
+				<constraints primaryKey="true" nullable="false" />
 			</column>
 			<column name="uuid" type="char(38)">
 				<constraints nullable="false" unique="true"></constraints>
 			</column>
-			<!--
-			<column name="owner" type="int" /
-			-->		
+			<!-- <column name="owner" type="int" / -->
 
 			<column name="description" type="varchar(255)" />
 			<column name="patient_id" type="int" />
 			<column name="drug_id" type="int" />
-			<column name="dose" type="varchar(255)" />	
-			<column name="advice" type="varchar(255)" />	
-   			<column name="prescription_date_created" type="datetime" />
+			<column name="dose" type="varchar(255)" />
+			<column name="advice" type="varchar(255)" />
+			<column name="prescription_date_created" type="datetime" />
 			<column name="prescription_file" type="varchar(255)" />
 
-			<!--
-			<column name="creator" type="int" />
-			<column name="date_created" type="datetime" />
-			<column name="changed_by" type="int" />
-			<column name="date_changed" type="datetime" />
-			<column name="voided" defaultValueBoolean="false" type="boolean"> 	
-				<constraints nullable="false" />
-			</column>
-			<column name="date_voided" type="datetime" />
-			<column name="voided_by" type="int" />
-			<column name="void_reason" type="varchar(255)" />
-			-->
-		
-		</createTable>
-        <!--addForeignKeyConstraint constraintName="prescription_owner_fk" baseTableName="prescription" baseColumnNames="owner"  referencedTableName="users"
-                                 referencedColumnNames="user_id" /-->
-    </changeSet>
+			<!-- <column name="creator" type="int" /> <column name="date_created" 
+				type="datetime" /> <column name="changed_by" type="int" /> <column name="date_changed" 
+				type="datetime" /> <column name="voided" defaultValueBoolean="false" type="boolean"> 
+				<constraints nullable="false" /> </column> <column name="date_voided" type="datetime" 
+				/> <column name="voided_by" type="int" /> <column name="void_reason" type="varchar(255)" 
+				/> -->
 
- 
+		</createTable>
+		<!--addForeignKeyConstraint constraintName="prescription_owner_fk" baseTableName="prescription" 
+			baseColumnNames="owner" referencedTableName="users" referencedColumnNames="user_id" 
+			/ -->
+	</changeSet>
+
+
 </databaseChangeLog>
 

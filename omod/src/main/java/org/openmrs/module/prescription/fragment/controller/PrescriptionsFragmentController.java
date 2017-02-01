@@ -26,6 +26,7 @@ import java.io.FileOutputStream;
 import java.io.FileInputStream;
 import java.io.File;
 import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.openmrs.module.prescription.PrescriptionConfig;
@@ -34,7 +35,7 @@ import org.openmrs.api.context.Context;
 public class PrescriptionsFragmentController {
 	
 	public void controller(FragmentModel model, @FragmentParam("patientId") Patient patient,
-	        @SpringBean("prescription.PrescriptionService") PrescriptionService service) {
+	        @SpringBean("prescription.PrescriptionService") PrescriptionService service, HttpServletRequest request) {
 		
 		model.addAttribute("prescriptionsgrouped", service.getAllPrescriptionsGrouped(patient));
 		
@@ -42,6 +43,8 @@ public class PrescriptionsFragmentController {
 		    Context.getAuthenticatedUser().hasPrivilege("Task: Prescription_view_privilege"));
 		model.addAttribute("hasPrescriptionModifyPrivilege",
 		    Context.getAuthenticatedUser().hasPrivilege("Task: Prescription_modify_privilege"));
+		
+		model.addAttribute("currenturl", request.getContextPath());
 		
 		System.out.println("Privilege view: "
 		        + Context.getAuthenticatedUser().hasPrivilege("Task: Prescription_view_privilege"));
