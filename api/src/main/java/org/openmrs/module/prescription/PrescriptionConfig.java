@@ -16,6 +16,6 @@ import org.springframework.stereotype.Component;
  */
 @Component("prescription.PrescriptionConfig")
 public class PrescriptionConfig {
-
+	
 	public final static String MODIFY_PRESCRIPTION_PRIVILEGE = "Task: add and modify Prescription Privilege";
 }

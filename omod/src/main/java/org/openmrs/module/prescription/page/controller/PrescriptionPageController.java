@@ -23,109 +23,110 @@ import org.springframework.web.bind.annotation.RequestParam;
 //import java.util.ArrayList;
 
 public class PrescriptionPageController {
-
+	
 	public void controller(@RequestParam("patientId") Patient patient,
-			@RequestParam(value = "prescriptionId", required = false) Integer prescriptionId,
-			@RequestParam(value = "returnUrl", required = false) String returnUrl, PageModel model,
-			@SpringBean("prescription.PrescriptionService") PrescriptionService service, UiUtils ui) {
-
+	        @RequestParam(value = "prescriptionId", required = false) Integer prescriptionId,
+	        @RequestParam(value = "returnUrl", required = false) String returnUrl, PageModel model,
+	        @SpringBean("prescription.PrescriptionService") PrescriptionService service, UiUtils ui) {
+		
 		// model.addAttribute("prescriptions",
 		// service.getAllPrescriptions(patient));
-
+		
 		if (StringUtils.isBlank(returnUrl)) {
 			returnUrl = ui.pageLink("coreapps", "clinicianfacing/patient",
-					Collections.singletonMap("patientId", (Object) patient.getId()));
+			    Collections.singletonMap("patientId", (Object) patient.getId()));
 		}
-
+		
 		List<Drug> drugList;
-
+		
 		if (prescriptionId != null) {
 			Prescription prescription = service.getItemById(prescriptionId);
 			model.addAttribute("prescription", prescription);
 		}
 		drugList = service.getAllDrugs();
-
+		
 		model.addAttribute("drugstoprescribe", drugList);
-
+		
 		model.addAttribute("patient", patient);
 		model.addAttribute("returnUrl", returnUrl);
 		model.addAttribute("prescriptionId", prescriptionId);
 	}
-
+	
 	public String post(@MethodParam("getPrescription") @BindParams Prescription prescription,
-			@RequestParam("patientId") Patient patient, @RequestParam(value = "action", required = false) String action,
-			@RequestParam(value = "prescriptionId", required = false) Integer prescriptionId,
-			@RequestParam(value = "returnUrl", required = false) String returnUrl, PageModel model,
-			@SpringBean("prescription.PrescriptionService") PrescriptionService service, HttpSession session,
-			UiUtils ui) throws Exception {
-
+	        @RequestParam("patientId") Patient patient, @RequestParam(value = "action", required = false) String action,
+	        @RequestParam(value = "prescriptionId", required = false) Integer prescriptionId,
+	        @RequestParam(value = "returnUrl", required = false) String returnUrl, PageModel model,
+	        @SpringBean("prescription.PrescriptionService") PrescriptionService service, HttpSession session, UiUtils ui)
+	        throws Exception {
+		
 		if (StringUtils.isNotBlank(action))
 			System.out.println("Log: post action PrescriptionPageController - " + action);
-
+		
 		try {
-
+			
 			if (prescription != null) {
-
+				
 				if (StringUtils.isNotBlank(prescription.getDose())) {
-
+					
 					service.saveItem(prescription);
 					model.addAttribute("prescription", prescription);
 				}
 			}
-
+			
 			// InfoErrorMessageUtil.flashInfoMessage(session, successMsgCode);
-
+			
 			return "redirect:prescription/prescriptions.page?patientId=" + patient.getPatientId() + "&returnUrl="
-					+ ui.urlEncode(returnUrl);
-		} catch (Exception e) {
+			        + ui.urlEncode(returnUrl);
+		}
+		catch (Exception e) {
 			session.setAttribute("error_message", "failed to add prescription");
 			e.printStackTrace();
 		}
-
+		
 		model.addAttribute("returnUrl", returnUrl);
 		model.addAttribute("patient", patient);
 		if (prescription != null)
 			model.addAttribute("prescription", prescription);
-
+		
 		return null;
 	}
-
+	
 	public Prescription getPrescription(@RequestParam("patientId") Patient patient,
-			@RequestParam(value = "drugId", required = false) Integer drugId,
-			@RequestParam(value = "dose", required = false) String dose,
-			@RequestParam(value = "advice", required = false) String advice,
-			@RequestParam(value = "prescriptionId", required = false) Integer prescriptionId,
-			@SpringBean("prescription.PrescriptionService") PrescriptionService service, HttpServletRequest request) {
-
+	        @RequestParam(value = "drugId", required = false) Integer drugId,
+	        @RequestParam(value = "dose", required = false) String dose,
+	        @RequestParam(value = "advice", required = false) String advice,
+	        @RequestParam(value = "prescriptionId", required = false) Integer prescriptionId,
+	        @SpringBean("prescription.PrescriptionService") PrescriptionService service, HttpServletRequest request) {
+		
 		if (drugId == 0)
 			return null;
 		else
 			System.out.println("drugID " + drugId);
-
+		
 		if (StringUtils.isBlank(dose))
 			return null;
-
+		
 		Prescription prescription = null;
-
+		
 		if (prescriptionId != null) {
 			prescription = service.getItemById(prescriptionId);
-
+			
 			System.out.println("Log PrescriptionPageController: prescriptionId - " + prescriptionId);
 		} else {
 			prescription = new Prescription();
 			prescription.setPatientId(patient.getPatientId());
 		}
-
+		
 		prescription.setDrugId(drugId);
 		prescription.setDescription(service.getDrugDescriptionById(drugId));
 		prescription.setDose(dose);
-
+		
 		if (StringUtils.isBlank(advice))
 			prescription.setAdvice(null);
 		else
 			prescription.setAdvice(advice);
-
+		
 		return prescription;
 	}
-
+	
 }

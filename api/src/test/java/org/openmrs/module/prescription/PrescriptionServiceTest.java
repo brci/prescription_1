@@ -22,40 +22,39 @@ import org.openmrs.module.prescription.api.dao.PrescriptionDao;
 import org.openmrs.module.prescription.api.impl.PrescriptionServiceImpl;
 
 /**
- * This is a unit test, which verifies logic in PrescriptionService. It doesn't
- * extend BaseModuleContextSensitiveTest, thus it is run without the in-memory
- * DB and Spring context.
+ * This is a unit test, which verifies logic in PrescriptionService. It doesn't extend
+ * BaseModuleContextSensitiveTest, thus it is run without the in-memory DB and Spring context.
  */
 public class PrescriptionServiceTest {
-
+	
 	@InjectMocks
 	PrescriptionServiceImpl basicModuleService;
-
+	
 	@Mock
 	PrescriptionDao dao;
-
+	
 	@Mock
 	UserService userService;
-
+	
 	@Before
 	public void setupMocks() {
 		MockitoAnnotations.initMocks(this);
 	}
-
+	
 	@Test
 	public void saveItem_shouldSetOwnerIfNotSet() {
 		// Given
 		Prescription item = new Prescription();
 		item.setDescription("some description");
-
+		
 		when(dao.saveItem(item)).thenReturn(item);
-
+		
 		User user = new User();
 		when(userService.getUser(1)).thenReturn(user);
-
+		
 		// When
 		basicModuleService.saveItem(item);
-
+		
 		// Then
 		// assertThat(item, hasProperty("owner", is(user)));
 	}

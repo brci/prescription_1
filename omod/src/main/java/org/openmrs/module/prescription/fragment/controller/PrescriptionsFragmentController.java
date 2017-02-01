@@ -20,24 +20,24 @@ import org.openmrs.ui.framework.annotation.SpringBean;
 import org.openmrs.ui.framework.fragment.FragmentModel;
 
 public class PrescriptionsFragmentController {
-
+	
 	public void controller(FragmentModel model, @FragmentParam("patientId") Patient patient,
-			@SpringBean("prescription.PrescriptionService") PrescriptionService service, HttpServletRequest request) {
-
+	        @SpringBean("prescription.PrescriptionService") PrescriptionService service, HttpServletRequest request) {
+		
 		model.addAttribute("prescriptionsgrouped", service.getAllPrescriptionsGrouped(patient));
-
+		
 		model.addAttribute("hasPrescriptionViewPrivilege",
-				Context.getAuthenticatedUser().hasPrivilege("Task: Prescription_view_privilege"));
+		    Context.getAuthenticatedUser().hasPrivilege("Task: Prescription_view_privilege"));
 		model.addAttribute("hasPrescriptionModifyPrivilege",
-				Context.getAuthenticatedUser().hasPrivilege("Task: Prescription_modify_privilege"));
-
+		    Context.getAuthenticatedUser().hasPrivilege("Task: Prescription_modify_privilege"));
+		
 		model.addAttribute("currenturl", request.getContextPath());
-
-		System.out.println(
-				"Privilege view: " + Context.getAuthenticatedUser().hasPrivilege("Task: Prescription_view_privilege"));
+		
+		System.out.println("Privilege view: "
+		        + Context.getAuthenticatedUser().hasPrivilege("Task: Prescription_view_privilege"));
 		System.out.println("Privilege modify: "
-				+ Context.getAuthenticatedUser().hasPrivilege("Task: Prescription_modify_privilege"));
-
+		        + Context.getAuthenticatedUser().hasPrivilege("Task: Prescription_modify_privilege"));
+		
 	}
-
+	
 }

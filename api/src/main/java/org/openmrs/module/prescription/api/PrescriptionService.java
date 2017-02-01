@@ -26,10 +26,10 @@ import org.springframework.transaction.annotation.Transactional;
  * moduleApplicationContext.xml on how it is wired up.
  */
 public interface PrescriptionService extends OpenmrsService {
-
+	
 	/**
-	 * Returns an item by uuid. It can be called by any authenticated user. It
-	 * is fetched in read only transaction.
+	 * Returns an item by uuid. It can be called by any authenticated user. It is fetched in read
+	 * only transaction.
 	 * 
 	 * @param uuid
 	 * @return
@@ -38,11 +38,10 @@ public interface PrescriptionService extends OpenmrsService {
 	@Authorized()
 	@Transactional(readOnly = true)
 	Prescription getItemByUuid(String uuid) throws APIException;
-
+	
 	/**
-	 * Saves an item. Sets the owner to superuser, if it is not set. It can be
-	 * called by users with this module's privilege. It is executed in a
-	 * transaction.
+	 * Saves an item. Sets the owner to superuser, if it is not set. It can be called by users with
+	 * this module's privilege. It is executed in a transaction.
 	 * 
 	 * @param item
 	 * @return
@@ -51,36 +50,35 @@ public interface PrescriptionService extends OpenmrsService {
 	@Authorized(PrescriptionConfig.MODIFY_PRESCRIPTION_PRIVILEGE)
 	@Transactional
 	Prescription saveItem(Prescription item) throws APIException;
-
+	
 	@Authorized()
 	@Transactional(readOnly = true)
 	Prescription getItemById(Integer pid) throws APIException;
-
+	
 	@Authorized(PrescriptionConfig.MODIFY_PRESCRIPTION_PRIVILEGE)
 	@Transactional
 	boolean deleteItem(Prescription item) throws APIException;
-
+	
 	public boolean deleteItemFile(Prescription item) throws APIException;
-
+	
 	@Authorized
 	public List<Prescription> getAllPrescriptions(Patient var1) throws APIException, IllegalArgumentException;
-
+	
 	@Authorized
 	public List<Prescription> getAllPrescriptionsByFile(String fileName) throws APIException;
-
+	
 	@Authorized
-	public HashMap<Integer, Prescription> getAllPrescriptionsMap(Patient var1)
-			throws APIException, IllegalArgumentException;
-
+	public HashMap<Integer, Prescription> getAllPrescriptionsMap(Patient var1) throws APIException, IllegalArgumentException;
+	
 	@Authorized
 	public List<String> getAllPrescriptionsGrouped(Patient var1) throws APIException, IllegalArgumentException;
-
+	
 	public String[] getAddressToPrint();
-
+	
 	public List<Drug> getAllDrugs();
-
+	
 	// public List<Drug> getAllDrugsExceptOne(Integer id);
-
+	
 	public String getDrugDescriptionById(Integer id);
-
+	
 }
