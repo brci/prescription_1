@@ -136,9 +136,20 @@ public class PrescriptionServiceImpl extends BaseOpenmrsService implements Presc
 		}
 		
 		String[] result = new String[3];
-		result[0] = properties.getProperty("prescription_address_1");
-		result[1] = properties.getProperty("prescription_address_1");
-		result[2] = properties.getProperty("prescription_address_1");
+		if (properties.containsKey("prescription_address_1"))
+			result[0] = properties.getProperty("prescription_address_1");
+		else
+			result[0] = "";
+		
+		if (properties.containsKey("prescription_address_2"))
+			result[1] = properties.getProperty("prescription_address_2");
+		else
+			result[1] = "";
+		
+		if (properties.containsKey("prescription_address_3"))
+			result[2] = properties.getProperty("prescription_address_3");
+		else
+			result[2] = "";
 		
 		return result;
 	}

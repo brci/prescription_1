@@ -23,9 +23,8 @@
               <tr>                
                                              
                <td>
-               <a href="${ ui.format('/openmrs-standalone/moduleServlet/prescription/downloadPrescriptionServlet' + '?filename=' + it) }" target="_blank">${ ui.format(it) }</a>
-               </td>
-                                             
+               <a href="${ ui.format(<%= request.getContextPath() %>'/moduleServlet/prescription/downloadPrescriptionServlet' + '?filename=' + it) }" target="_blank">${ ui.format(it) }</a>
+               </td>                                  
               </tr>
           <% } %>
           

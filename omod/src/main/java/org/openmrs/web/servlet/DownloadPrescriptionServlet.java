@@ -116,9 +116,9 @@ public class DownloadPrescriptionServlet extends HttpServlet {
 			
 			String[] providerAddress = Context.getService(PrescriptionService.class).getAddressToPrint();
 			
-			String addr1 = "";
-			String addr2 = "";
-			String addr3 = "";
+			String addr1 = providerAddress[0];
+			String addr2 = providerAddress[1];
+			String addr3 = providerAddress[2];
 			Properties rtp = Context.getRuntimeProperties();
 			
 			if (rtp.getProperty("prescription_address_1") != null)
