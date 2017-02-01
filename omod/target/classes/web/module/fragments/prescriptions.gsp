@@ -23,7 +23,7 @@
               <tr>                
                                              
                <td>
-               <a href="${ ui.format(<%= request.getContextPath() %>'/moduleServlet/prescription/downloadPrescriptionServlet' + '?filename=' + it) }" target="_blank">${ ui.format(it) }</a>
+               <a href="${ ui.format('' + <%= request.getContextPath() %> + '/moduleServlet/prescription/downloadPrescriptionServlet' + '?filename=' + it) }" target="_blank">${ ui.format(it) }</a>
                </td>                                  
               </tr>
           <% } %>
