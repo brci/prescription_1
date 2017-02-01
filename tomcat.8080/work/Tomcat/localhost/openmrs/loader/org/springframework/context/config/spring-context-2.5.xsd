@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<xsd:schema xmlns="http://www.springframework.org/schema/context" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-		xmlns:beans="http://www.springframework.org/schema/beans"
-		xmlns:tool="http://www.springframework.org/schema/tool"
-		targetNamespace="http://www.springframework.org/schema/context" elementFormDefault="qualified"
-		attributeFormDefault="unqualified">
+<xsd:schema xmlns="http://www.springframework.org/schema/context"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:tool="http://www.springframework.org/schema/tool"
+	targetNamespace="http://www.springframework.org/schema/context"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
 
-	<xsd:import namespace="http://www.springframework.org/schema/beans" schemaLocation="http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"/>
-	<xsd:import namespace="http://www.springframework.org/schema/tool" schemaLocation="http://www.springframework.org/schema/tool/spring-tool-2.5.xsd"/>
+	<xsd:import namespace="http://www.springframework.org/schema/beans"
+		schemaLocation="http://www.springframework.org/schema/beans/spring-beans-2.5.xsd" />
+	<xsd:import namespace="http://www.springframework.org/schema/tool"
+		schemaLocation="http://www.springframework.org/schema/tool/spring-tool-2.5.xsd" />
 
 	<xsd:annotation>
 		<xsd:documentation><![CDATA[
@@ -26,7 +28,8 @@
 			]]></xsd:documentation>
 			<xsd:appinfo>
 				<tool:annotation>
-					<tool:exports type="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>
+					<tool:exports
+						type="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" />
 				</tool:annotation>
 			</xsd:appinfo>
 		</xsd:annotation>
@@ -60,7 +63,8 @@
 			]]></xsd:documentation>
 			<xsd:appinfo>
 				<tool:annotation>
-					<tool:exports type="org.springframework.beans.factory.config.PropertyOverrideConfigurer"/>
+					<tool:exports
+						type="org.springframework.beans.factory.config.PropertyOverrideConfigurer" />
 				</tool:annotation>
 			</xsd:appinfo>
 		</xsd:annotation>
@@ -123,14 +127,16 @@
 		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:sequence>
-				<xsd:element name="include-filter" type="filterType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="include-filter" type="filterType"
+					minOccurs="0" maxOccurs="unbounded">
 					<xsd:annotation>
 						<xsd:documentation><![CDATA[
 	Controls which eligible types to include for component scanning.
 							]]></xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
-				<xsd:element name="exclude-filter" type="filterType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="exclude-filter" type="filterType"
+					minOccurs="0" maxOccurs="unbounded">
 					<xsd:annotation>
 						<xsd:documentation><![CDATA[
 	Controls which eligible types to exclude for component scanning.
@@ -138,7 +144,8 @@
 					</xsd:annotation>
 				</xsd:element>
 			</xsd:sequence>
-			<xsd:attribute name="base-package" type="xsd:string" use="required">
+			<xsd:attribute name="base-package" type="xsd:string"
+				use="required">
 				<xsd:annotation>
 					<xsd:documentation><![CDATA[
 	The comma-separated list of packages to scan for annotated components.
@@ -152,7 +159,8 @@
 					]]></xsd:documentation>
 				</xsd:annotation>
 			</xsd:attribute>
-			<xsd:attribute name="use-default-filters" type="xsd:boolean" default="true">
+			<xsd:attribute name="use-default-filters" type="xsd:boolean"
+				default="true">
 				<xsd:annotation>
 					<xsd:documentation><![CDATA[
 	Indicates whether automatic detection of classes annotated with @Component, @Repository, @Service,
@@ -160,7 +168,8 @@
 					]]></xsd:documentation>
 				</xsd:annotation>
 			</xsd:attribute>
-			<xsd:attribute name="annotation-config" type="xsd:boolean" default="true">
+			<xsd:attribute name="annotation-config" type="xsd:boolean"
+				default="true">
 				<xsd:annotation>
 					<xsd:documentation><![CDATA[
 	Indicates whether the implicit annotation post-processors should be enabled. Default is "true".
@@ -174,8 +183,9 @@
 					]]></xsd:documentation>
 					<xsd:appinfo>
 						<tool:annotation>
-							<tool:expected-type type="java.lang.Class"/>
-							<tool:assignable-to type="org.springframework.beans.factory.support.BeanNameGenerator"/>
+							<tool:expected-type type="java.lang.Class" />
+							<tool:assignable-to
+								type="org.springframework.beans.factory.support.BeanNameGenerator" />
 						</tool:annotation>
 					</xsd:appinfo>
 				</xsd:annotation>
@@ -188,8 +198,9 @@
 					]]></xsd:documentation>
 					<xsd:appinfo>
 						<tool:annotation>
-							<tool:expected-type type="java.lang.Class"/>
-							<tool:assignable-to type="org.springframework.context.annotation.ScopeMetadataResolver"/>
+							<tool:expected-type type="java.lang.Class" />
+							<tool:assignable-to
+								type="org.springframework.context.annotation.ScopeMetadataResolver" />
 						</tool:annotation>
 					</xsd:appinfo>
 				</xsd:annotation>
@@ -203,9 +214,9 @@
 				</xsd:annotation>
 				<xsd:simpleType>
 					<xsd:restriction base="xsd:string">
-						<xsd:enumeration value="no"/>
-						<xsd:enumeration value="interfaces"/>
-						<xsd:enumeration value="targetClass"/>
+						<xsd:enumeration value="no" />
+						<xsd:enumeration value="interfaces" />
+						<xsd:enumeration value="targetClass" />
 					</xsd:restriction>
 				</xsd:simpleType>
 			</xsd:attribute>
@@ -238,7 +249,8 @@
 			]]></xsd:documentation>
 			<xsd:appinfo>
 				<tool:annotation>
-					<tool:exports type="org.springframework.instrument.classloading.LoadTimeWeaver"/>
+					<tool:exports
+						type="org.springframework.instrument.classloading.LoadTimeWeaver" />
 				</tool:annotation>
 			</xsd:appinfo>
 		</xsd:annotation>
@@ -250,8 +262,9 @@
 					]]></xsd:documentation>
 					<xsd:appinfo>
 						<tool:annotation>
-							<tool:expected-type type="java.lang.Class"/>
-							<tool:assignable-to type="org.springframework.instrument.classloading.LoadTimeWeaver"/>
+							<tool:expected-type type="java.lang.Class" />
+							<tool:assignable-to
+								type="org.springframework.instrument.classloading.LoadTimeWeaver" />
 						</tool:annotation>
 					</xsd:appinfo>
 				</xsd:annotation>
@@ -290,7 +303,8 @@
 
 	<xsd:element name="spring-configured">
 		<xsd:annotation>
-			<xsd:documentation source="java:org.springframework.beans.factory.aspectj.AnnotationBeanConfigurerAspect">
+			<xsd:documentation
+				source="java:org.springframework.beans.factory.aspectj.AnnotationBeanConfigurerAspect">
 				<![CDATA[
 	Signals the current application context to apply dependency injection
 	to non-managed classes that are instantiated outside of the Spring bean
@@ -298,13 +312,14 @@
 			]]></xsd:documentation>
 		</xsd:annotation>
 		<xsd:simpleType>
-			<xsd:restriction base="xsd:string"/>
+			<xsd:restriction base="xsd:string" />
 		</xsd:simpleType>
 	</xsd:element>
 
 	<xsd:element name="mbean-export">
 		<xsd:annotation>
-			<xsd:documentation source="java:org.springframework.jmx.export.annotation.AnnotationMBeanExporter"><![CDATA[
+			<xsd:documentation
+				source="java:org.springframework.jmx.export.annotation.AnnotationMBeanExporter"><![CDATA[
 	Activates default exporting of MBeans by detecting standard MBeans in the Spring
 	context as well as @ManagedResource annotations on Spring-defined beans.
 
@@ -313,7 +328,8 @@
 			]]></xsd:documentation>
 			<xsd:appinfo>
 				<tool:annotation>
-					<tool:exports type="org.springframework.jmx.export.annotation.AnnotationMBeanExporter"/>
+					<tool:exports
+						type="org.springframework.jmx.export.annotation.AnnotationMBeanExporter" />
 				</tool:annotation>
 			</xsd:appinfo>
 		</xsd:annotation>
@@ -346,9 +362,9 @@
 				</xsd:annotation>
 				<xsd:simpleType>
 					<xsd:restriction base="xsd:NMTOKEN">
-						<xsd:enumeration value="failOnExisting"/>
-						<xsd:enumeration value="ignoreExisting"/>
-						<xsd:enumeration value="replaceExisting"/>
+						<xsd:enumeration value="failOnExisting" />
+						<xsd:enumeration value="ignoreExisting" />
+						<xsd:enumeration value="replaceExisting" />
 					</xsd:restriction>
 				</xsd:simpleType>
 			</xsd:attribute>
@@ -357,7 +373,8 @@
 
 	<xsd:element name="mbean-server">
 		<xsd:annotation>
-			<xsd:documentation source="java:org.springframework.jmx.support.MBeanServerFactoryBean"><![CDATA[
+			<xsd:documentation
+				source="java:org.springframework.jmx.support.MBeanServerFactoryBean"><![CDATA[
 	Exposes a default MBeanServer for the current platform.
 	Autodetects WebLogic 9+, WebSphere 5.1+ and the JDK 1.5+ platform MBeanServer.
 
@@ -366,7 +383,7 @@
 			]]></xsd:documentation>
 			<xsd:appinfo>
 				<tool:annotation>
-					<tool:exports type="javax.management.MBeanServer"/>
+					<tool:exports type="javax.management.MBeanServer" />
 				</tool:annotation>
 			</xsd:appinfo>
 		</xsd:annotation>
@@ -403,11 +420,11 @@
 			</xsd:annotation>
 			<xsd:simpleType>
 				<xsd:restriction base="xsd:string">
-					<xsd:enumeration value="annotation"/>
-					<xsd:enumeration value="assignable"/>
-					<xsd:enumeration value="aspectj"/>
-					<xsd:enumeration value="regex"/>
-					<xsd:enumeration value="custom"/>
+					<xsd:enumeration value="annotation" />
+					<xsd:enumeration value="assignable" />
+					<xsd:enumeration value="aspectj" />
+					<xsd:enumeration value="regex" />
+					<xsd:enumeration value="custom" />
 				</xsd:restriction>
 			</xsd:simpleType>
 		</xsd:attribute>

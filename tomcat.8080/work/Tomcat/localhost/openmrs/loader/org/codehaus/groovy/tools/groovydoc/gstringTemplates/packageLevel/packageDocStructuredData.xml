@@ -1,6 +1,7 @@
 <package>
-  <classes><% for (classDoc in packageDoc.allClasses()) { %>
-    <class name="${classDoc.name()}" />
-<% } %>
-  </classes>
+	<classes>
+		<% for (classDoc in packageDoc.allClasses()) { %>
+		<class name="${classDoc.name()}" />
+		<% } %>
+	</classes>
 </package>

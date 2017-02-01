@@ -108,9 +108,9 @@
 					<xsd:attribute name="system-properties-mode" default="FALLBACK">
 						<xsd:simpleType>
 							<xsd:restriction base="xsd:string">
-								<xsd:enumeration value="NEVER"/>
-								<xsd:enumeration value="FALLBACK"/>
-								<xsd:enumeration value="OVERRIDE"/>
+								<xsd:enumeration value="NEVER" />
+								<xsd:enumeration value="FALLBACK" />
+								<xsd:enumeration value="OVERRIDE" />
 							</xsd:restriction>
 						</xsd:simpleType>
 					</xsd:attribute>

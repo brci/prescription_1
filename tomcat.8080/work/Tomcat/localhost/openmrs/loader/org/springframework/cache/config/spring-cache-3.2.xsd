@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
 <xsd:schema xmlns="http://www.springframework.org/schema/cache"
-		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-		xmlns:beans="http://www.springframework.org/schema/beans"
-		xmlns:tool="http://www.springframework.org/schema/tool"
-		targetNamespace="http://www.springframework.org/schema/cache"
-		elementFormDefault="qualified"
-		attributeFormDefault="unqualified">
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:tool="http://www.springframework.org/schema/tool"
+	targetNamespace="http://www.springframework.org/schema/cache"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
 
-	<xsd:import namespace="http://www.springframework.org/schema/beans" schemaLocation="http://www.springframework.org/schema/beans/spring-beans-3.2.xsd"/>
-	<xsd:import namespace="http://www.springframework.org/schema/tool" schemaLocation="http://www.springframework.org/schema/tool/spring-tool-3.2.xsd"/>
+	<xsd:import namespace="http://www.springframework.org/schema/beans"
+		schemaLocation="http://www.springframework.org/schema/beans/spring-beans-3.2.xsd" />
+	<xsd:import namespace="http://www.springframework.org/schema/tool"
+		schemaLocation="http://www.springframework.org/schema/tool/spring-tool-3.2.xsd" />
 
 	<xsd:annotation>
 		<xsd:documentation><![CDATA[
@@ -21,7 +21,8 @@
 	<xsd:element name="annotation-driven">
 		<xsd:complexType>
 			<xsd:annotation>
-				<xsd:documentation source="java:org.springframework.cache.annotation.AnnotationCacheOperationDefinitionSource"><![CDATA[
+				<xsd:documentation
+					source="java:org.springframework.cache.annotation.AnnotationCacheOperationDefinitionSource"><![CDATA[
 	Indicates that cache configuration is defined by Java 5
 	annotations on bean classes, and that proxies are automatically
 	to be created for the relevant annotated beans.
@@ -32,7 +33,8 @@
 	for information on code-based alternatives to this XML element.
 				]]></xsd:documentation>
 			</xsd:annotation>
-			<xsd:attribute name="cache-manager" type="xsd:string" default="cacheManager">
+			<xsd:attribute name="cache-manager" type="xsd:string"
+				default="cacheManager">
 				<xsd:annotation>
 					<xsd:documentation source="java:org.springframework.cache.CacheManager"><![CDATA[
 	The bean name of the CacheManager that is to be used to retrieve the backing caches.
@@ -43,14 +45,15 @@
 					]]></xsd:documentation>
 					<xsd:appinfo>
 						<tool:annotation kind="ref">
-							<tool:expected-type type="org.springframework.cache.CacheManager"/>
+							<tool:expected-type type="org.springframework.cache.CacheManager" />
 						</tool:annotation>
 					</xsd:appinfo>
 				</xsd:annotation>
 			</xsd:attribute>
 			<xsd:attribute name="key-generator" type="xsd:string">
 				<xsd:annotation>
-					<xsd:documentation source="java:org.springframework.cache.interceptor.KeyGenerator"><![CDATA[
+					<xsd:documentation
+						source="java:org.springframework.cache.interceptor.KeyGenerator"><![CDATA[
 	The bean name of the KeyGenerator that is to be used to retrieve the backing caches.
 
 	This attribute is not required, and only needs to be specified
@@ -58,7 +61,8 @@
 					]]></xsd:documentation>
 					<xsd:appinfo>
 						<tool:annotation kind="ref">
-							<tool:expected-type type="org.springframework.cache.interceptor.KeyGenerator"/>
+							<tool:expected-type
+								type="org.springframework.cache.interceptor.KeyGenerator" />
 						</tool:annotation>
 					</xsd:appinfo>
 				</xsd:annotation>
@@ -79,12 +83,13 @@
 				</xsd:annotation>
 				<xsd:simpleType>
 					<xsd:restriction base="xsd:string">
-						<xsd:enumeration value="proxy"/>
-						<xsd:enumeration value="aspectj"/>
+						<xsd:enumeration value="proxy" />
+						<xsd:enumeration value="aspectj" />
 					</xsd:restriction>
 				</xsd:simpleType>
 			</xsd:attribute>
-			<xsd:attribute name="proxy-target-class" type="xsd:boolean" default="false">
+			<xsd:attribute name="proxy-target-class" type="xsd:boolean"
+				default="false">
 				<xsd:annotation>
 					<xsd:documentation><![CDATA[
 	Are class-based (CGLIB) proxies to be created? By default, standard
@@ -110,7 +115,8 @@
 	<xsd:element name="advice">
 		<xsd:complexType>
 			<xsd:annotation>
-				<xsd:documentation source="java:org.springframework.cache.interceptor.CacheInterceptor"><![CDATA[
+				<xsd:documentation
+					source="java:org.springframework.cache.interceptor.CacheInterceptor"><![CDATA[
 	Defines the cache semantics of the AOP advice that is to be
 	executed.
 
@@ -120,16 +126,19 @@
 				]]></xsd:documentation>
 				<xsd:appinfo>
 					<tool:annotation>
-						<tool:exports type="java:org.springframework.cache.interceptor.CacheInterceptor"/>
+						<tool:exports
+							type="java:org.springframework.cache.interceptor.CacheInterceptor" />
 					</tool:annotation>
 				</xsd:appinfo>
 			</xsd:annotation>
 			<xsd:complexContent>
 				<xsd:extension base="beans:identifiedType">
 					<xsd:sequence>
-						<xsd:element name="caching" type="definitionsType" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="caching" type="definitionsType"
+							minOccurs="0" maxOccurs="unbounded" />
 					</xsd:sequence>
-					<xsd:attribute name="cache-manager" type="xsd:string" default="cacheManager">
+					<xsd:attribute name="cache-manager" type="xsd:string"
+						default="cacheManager">
 						<xsd:annotation>
 							<xsd:documentation source="java:org.springframework.cache.CacheManager"><![CDATA[
 	The bean name of the CacheManager that is to be used
@@ -141,14 +150,15 @@
 							]]></xsd:documentation>
 							<xsd:appinfo>
 								<tool:annotation kind="ref">
-									<tool:expected-type type="org.springframework.cache.CacheManager"/>
+									<tool:expected-type type="org.springframework.cache.CacheManager" />
 								</tool:annotation>
 							</xsd:appinfo>
 						</xsd:annotation>
 					</xsd:attribute>
 					<xsd:attribute name="key-generator" type="xsd:string">
 						<xsd:annotation>
-							<xsd:documentation source="java:org.springframework.cache.interceptor.KeyGenerator"><![CDATA[
+							<xsd:documentation
+								source="java:org.springframework.cache.interceptor.KeyGenerator"><![CDATA[
 	The bean name of the KeyGenerator that is to be used to retrieve the backing caches.
 
 	This attribute is not required, and only needs to be specified
@@ -156,7 +166,8 @@
 							]]></xsd:documentation>
 							<xsd:appinfo>
 								<tool:annotation kind="ref">
-									<tool:expected-type type="org.springframework.cache.interceptor.KeyGenerator"/>
+									<tool:expected-type
+										type="org.springframework.cache.interceptor.KeyGenerator" />
 								</tool:annotation>
 							</xsd:appinfo>
 						</xsd:annotation>
@@ -201,58 +212,63 @@
 		<xsd:complexContent>
 			<xsd:extension base="basedefinitionType">
 				<xsd:sequence>
-				  <xsd:choice minOccurs="0" maxOccurs="unbounded">
-					<xsd:element name="cacheable" minOccurs="0" maxOccurs="unbounded">
-						<xsd:complexType>
-							<xsd:complexContent>
-								<xsd:extension base="basedefinitionType">
-									<xsd:attribute name="unless" type="xsd:string" use="optional">
-										<xsd:annotation>
-											<xsd:documentation><![CDATA[
+					<xsd:choice minOccurs="0" maxOccurs="unbounded">
+						<xsd:element name="cacheable" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="basedefinitionType">
+										<xsd:attribute name="unless" type="xsd:string"
+											use="optional">
+											<xsd:annotation>
+												<xsd:documentation><![CDATA[
 	The SpEL expression used to veto the method caching.]]></xsd:documentation>
-										</xsd:annotation>
-									</xsd:attribute>
-								</xsd:extension>
-							</xsd:complexContent>
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="cache-put" minOccurs="0" maxOccurs="unbounded">
-						<xsd:complexType>
-							<xsd:complexContent>
-								<xsd:extension base="basedefinitionType">
-									<xsd:attribute name="unless" type="xsd:string" use="optional">
-										<xsd:annotation>
-											<xsd:documentation><![CDATA[
+											</xsd:annotation>
+										</xsd:attribute>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="cache-put" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="basedefinitionType">
+										<xsd:attribute name="unless" type="xsd:string"
+											use="optional">
+											<xsd:annotation>
+												<xsd:documentation><![CDATA[
 	The SpEL expression used to veto the method caching.]]></xsd:documentation>
-										</xsd:annotation>
-									</xsd:attribute>
-								</xsd:extension>
-							</xsd:complexContent>
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="cache-evict" minOccurs="0" maxOccurs="unbounded">
-						<xsd:complexType>
-							<xsd:complexContent>
-								<xsd:extension base="basedefinitionType">
-									<xsd:attribute name="all-entries" type="xsd:boolean" use="optional">
-										<xsd:annotation>
-											<xsd:documentation><![CDATA[
+											</xsd:annotation>
+										</xsd:attribute>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="cache-evict" minOccurs="0"
+							maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="basedefinitionType">
+										<xsd:attribute name="all-entries" type="xsd:boolean"
+											use="optional">
+											<xsd:annotation>
+												<xsd:documentation><![CDATA[
 	Whether all the entries should be evicted.]]></xsd:documentation>
-										</xsd:annotation>
-									</xsd:attribute>
-									<xsd:attribute name="before-invocation" type="xsd:boolean" use="optional">
-										<xsd:annotation>
-											<xsd:documentation><![CDATA[
+											</xsd:annotation>
+										</xsd:attribute>
+										<xsd:attribute name="before-invocation" type="xsd:boolean"
+											use="optional">
+											<xsd:annotation>
+												<xsd:documentation><![CDATA[
 	Whether the eviction should occur after the method is successfully
 	invoked (default) or before.]]></xsd:documentation>
-										</xsd:annotation>
-									</xsd:attribute>
+											</xsd:annotation>
+										</xsd:attribute>
 
-								</xsd:extension>
-							</xsd:complexContent>
-						</xsd:complexType>
-					</xsd:element>
-				  </xsd:choice>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:choice>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>

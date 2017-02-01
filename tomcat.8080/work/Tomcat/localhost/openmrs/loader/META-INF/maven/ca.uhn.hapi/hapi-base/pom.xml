@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<parent>
 		<artifactId>hapi</artifactId>
 		<groupId>ca.uhn.hapi</groupId>
@@ -100,7 +101,8 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<!-- make sure our code doesn't have 1.5+ dependencies except where we know it -->
+				<!-- make sure our code doesn't have 1.5+ dependencies except where we 
+					know it -->
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>animal-sniffer-maven-plugin</artifactId>
 				<version>1.6</version>
@@ -191,38 +193,14 @@
 								</goals>
 							</execution>
 						</executions>
-					</plugin>				
-					<!-- 
-					<plugin>
-						<artifactId>maven-assembly-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>sources</id>
-								<phase>package</phase>
-								<goals>
-									<goal>single</goal>
-								</goals>
-								<configuration>
-									<descriptors>
-										<descriptor>../src/assembly/source.xml</descriptor>
-									</descriptors>
-								</configuration>
-							</execution>
-							<execution>
-								<id>javadoc</id>
-								<phase>package</phase>
-								<goals>
-									<goal>single</goal>
-								</goals>
-								<configuration>
-									<descriptors>
-										<descriptor>../src/assembly/javadoc.xml</descriptor>
-									</descriptors>
-								</configuration>
-							</execution>
-						</executions>
 					</plugin>
-					 -->
+					<!-- <plugin> <artifactId>maven-assembly-plugin</artifactId> <executions> 
+						<execution> <id>sources</id> <phase>package</phase> <goals> <goal>single</goal> 
+						</goals> <configuration> <descriptors> <descriptor>../src/assembly/source.xml</descriptor> 
+						</descriptors> </configuration> </execution> <execution> <id>javadoc</id> 
+						<phase>package</phase> <goals> <goal>single</goal> </goals> <configuration> 
+						<descriptors> <descriptor>../src/assembly/javadoc.xml</descriptor> </descriptors> 
+						</configuration> </execution> </executions> </plugin> -->
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>retrotranslator-maven-plugin</artifactId>

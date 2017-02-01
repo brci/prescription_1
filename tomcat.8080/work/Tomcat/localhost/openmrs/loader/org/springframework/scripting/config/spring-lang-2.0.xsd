@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
 <xsd:schema xmlns="http://www.springframework.org/schema/lang"
-		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-		xmlns:beans="http://www.springframework.org/schema/beans"
-		xmlns:tool="http://www.springframework.org/schema/tool"
-		targetNamespace="http://www.springframework.org/schema/lang"
-		elementFormDefault="qualified"
-		attributeFormDefault="unqualified">
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:tool="http://www.springframework.org/schema/tool"
+	targetNamespace="http://www.springframework.org/schema/lang"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
 
 	<xsd:annotation>
 		<xsd:documentation><![CDATA[
@@ -16,8 +14,10 @@
 		]]></xsd:documentation>
 	</xsd:annotation>
 
-	<xsd:import namespace="http://www.springframework.org/schema/beans" schemaLocation="http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"/>
-	<xsd:import namespace="http://www.springframework.org/schema/tool" schemaLocation="http://www.springframework.org/schema/tool/spring-tool-2.0.xsd"/>
+	<xsd:import namespace="http://www.springframework.org/schema/beans"
+		schemaLocation="http://www.springframework.org/schema/beans/spring-beans-2.0.xsd" />
+	<xsd:import namespace="http://www.springframework.org/schema/tool"
+		schemaLocation="http://www.springframework.org/schema/tool/spring-tool-2.0.xsd" />
 
 	<xsd:element name="groovy" type="customizableScriptType">
 		<xsd:annotation>
@@ -48,14 +48,16 @@
 		<xsd:complexContent>
 			<xsd:extension base="beans:identifiedType">
 				<xsd:sequence>
-					<xsd:element name="inline-script" minOccurs="0" maxOccurs="1">
+					<xsd:element name="inline-script" minOccurs="0"
+						maxOccurs="1">
 						<xsd:annotation>
 							<xsd:documentation><![CDATA[
 	The source code for the dynamic language-backed bean.
 							]]></xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:element name="property" type="beans:propertyType" minOccurs="0" maxOccurs="unbounded">
+					<xsd:element name="property" type="beans:propertyType"
+						minOccurs="0" maxOccurs="unbounded">
 						<xsd:annotation>
 							<xsd:documentation><![CDATA[
 	Dynamic language-backed bean definitions can have zero or more properties.

@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
 <xsd:schema xmlns="http://www.springframework.org/schema/task"
-		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-		xmlns:beans="http://www.springframework.org/schema/beans"
-		xmlns:tool="http://www.springframework.org/schema/tool"
-		targetNamespace="http://www.springframework.org/schema/task"
-		elementFormDefault="qualified"
-		attributeFormDefault="unqualified">
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:tool="http://www.springframework.org/schema/tool"
+	targetNamespace="http://www.springframework.org/schema/task"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
 
 	<xsd:annotation>
 		<xsd:documentation><![CDATA[
@@ -14,8 +12,10 @@
 		]]></xsd:documentation>
 	</xsd:annotation>
 
-	<xsd:import namespace="http://www.springframework.org/schema/beans" schemaLocation="http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"/>
-	<xsd:import namespace="http://www.springframework.org/schema/tool" schemaLocation="http://www.springframework.org/schema/tool/spring-tool-3.0.xsd"/>
+	<xsd:import namespace="http://www.springframework.org/schema/beans"
+		schemaLocation="http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" />
+	<xsd:import namespace="http://www.springframework.org/schema/tool"
+		schemaLocation="http://www.springframework.org/schema/tool/spring-tool-3.0.xsd" />
 
 	<xsd:element name="annotation-driven">
 		<xsd:annotation>
@@ -60,12 +60,13 @@
 				</xsd:annotation>
 				<xsd:simpleType>
 					<xsd:restriction base="xsd:string">
-						<xsd:enumeration value="proxy"/>
-						<xsd:enumeration value="aspectj"/>
+						<xsd:enumeration value="proxy" />
+						<xsd:enumeration value="aspectj" />
 					</xsd:restriction>
 				</xsd:simpleType>
 			</xsd:attribute>
-			<xsd:attribute name="proxy-target-class" type="xsd:boolean" default="false">
+			<xsd:attribute name="proxy-target-class" type="xsd:boolean"
+				default="false">
 				<xsd:annotation>
 					<xsd:documentation><![CDATA[
 	Are class-based (CGLIB) proxies to be created? By default, standard
@@ -138,7 +139,8 @@
 					]]></xsd:documentation>
 				</xsd:annotation>
 			</xsd:attribute>
-			<xsd:attribute name="queue-capacity" type="xsd:string" use="optional">
+			<xsd:attribute name="queue-capacity" type="xsd:string"
+				use="optional">
 				<xsd:annotation>
 					<xsd:documentation><![CDATA[
 	Queue capacity for the ThreadPoolTaskExecutor. If not specified, the default will
@@ -172,10 +174,10 @@
 				</xsd:annotation>
 				<xsd:simpleType>
 					<xsd:restriction base="xsd:string">
-						<xsd:enumeration value="ABORT"/>
-						<xsd:enumeration value="CALLER_RUNS"/>
-						<xsd:enumeration value="DISCARD"/>
-						<xsd:enumeration value="DISCARD_OLDEST"/>
+						<xsd:enumeration value="ABORT" />
+						<xsd:enumeration value="CALLER_RUNS" />
+						<xsd:enumeration value="DISCARD" />
+						<xsd:enumeration value="DISCARD_OLDEST" />
 					</xsd:restriction>
 				</xsd:simpleType>
 			</xsd:attribute>
@@ -191,7 +193,8 @@
 		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:sequence>
-				<xsd:element name="scheduled" type="scheduledTaskType" minOccurs="1" maxOccurs="unbounded"/>
+				<xsd:element name="scheduled" type="scheduledTaskType"
+					minOccurs="1" maxOccurs="unbounded" />
 			</xsd:sequence>
 			<xsd:attribute name="scheduler" type="xsd:string" use="optional">
 				<xsd:annotation>
@@ -201,7 +204,8 @@
 					]]></xsd:documentation>
 					<xsd:appinfo>
 						<tool:annotation kind="ref">
-							<tool:expected-type type="org.springframework.scheduling.TaskScheduler"/>
+							<tool:expected-type
+								type="org.springframework.scheduling.TaskScheduler" />
 						</tool:annotation>
 					</xsd:appinfo>
 				</xsd:annotation>
@@ -256,7 +260,7 @@
 				]]></xsd:documentation>
 				<xsd:appinfo>
 					<tool:annotation>
-						<tool:expected-method type-ref="@ref"/>
+						<tool:expected-method type-ref="@ref" />
 					</tool:annotation>
 				</xsd:appinfo>
 			</xsd:annotation>

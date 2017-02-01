@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
 <xsd:schema xmlns="http://www.springframework.org/schema/beans"
-		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-		targetNamespace="http://www.springframework.org/schema/beans">
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.springframework.org/schema/beans">
 
-	<xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
 
 	<xsd:annotation>
 		<xsd:documentation><![CDATA[
@@ -70,14 +69,15 @@
 		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:sequence>
-				<xsd:element ref="description" minOccurs="0"/>
+				<xsd:element ref="description" minOccurs="0" />
 				<xsd:choice minOccurs="0" maxOccurs="unbounded">
-					<xsd:element ref="import"/>
-					<xsd:element ref="alias"/>
-					<xsd:element ref="bean"/>
-					<xsd:any namespace="##other" processContents="strict" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="import" />
+					<xsd:element ref="alias" />
+					<xsd:element ref="bean" />
+					<xsd:any namespace="##other" processContents="strict"
+						minOccurs="0" maxOccurs="unbounded" />
 				</xsd:choice>
-				<xsd:element ref="beans" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="beans" minOccurs="0" maxOccurs="unbounded" />
 			</xsd:sequence>
 			<xsd:attribute name="profile" use="optional" type="xsd:string">
 				<xsd:annotation>
@@ -109,7 +109,8 @@
 					]]></xsd:documentation>
 				</xsd:annotation>
 			</xsd:attribute>
-			<xsd:attribute name="default-lazy-init" default="default" type="defaultable-boolean">
+			<xsd:attribute name="default-lazy-init" default="default"
+				type="defaultable-boolean">
 				<xsd:annotation>
 					<xsd:documentation><![CDATA[
 	The default 'lazy-init' value; see the documentation for the
@@ -117,7 +118,8 @@
 					]]></xsd:documentation>
 				</xsd:annotation>
 			</xsd:attribute>
-			<xsd:attribute name="default-merge" default="default" type="defaultable-boolean">
+			<xsd:attribute name="default-merge" default="default"
+				type="defaultable-boolean">
 				<xsd:annotation>
 					<xsd:documentation><![CDATA[
 	The default 'merge' value; see the documentation for the
@@ -135,11 +137,11 @@
 				</xsd:annotation>
 				<xsd:simpleType>
 					<xsd:restriction base="xsd:NMTOKEN">
-						<xsd:enumeration value="default"/>
-						<xsd:enumeration value="no"/>
-						<xsd:enumeration value="byName"/>
-						<xsd:enumeration value="byType"/>
-						<xsd:enumeration value="constructor"/>
+						<xsd:enumeration value="default" />
+						<xsd:enumeration value="no" />
+						<xsd:enumeration value="byName" />
+						<xsd:enumeration value="byType" />
+						<xsd:enumeration value="constructor" />
 					</xsd:restriction>
 				</xsd:simpleType>
 			</xsd:attribute>
@@ -170,7 +172,8 @@
 					]]></xsd:documentation>
 				</xsd:annotation>
 			</xsd:attribute>
-			<xsd:anyAttribute namespace="##other" processContents="lax"/>
+			<xsd:anyAttribute namespace="##other"
+				processContents="lax" />
 		</xsd:complexType>
 	</xsd:element>
 
@@ -182,7 +185,7 @@
 			]]></xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
-			<xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded" />
 		</xsd:complexType>
 	</xsd:element>
 
@@ -239,15 +242,16 @@
 
 	<xsd:group name="beanElements">
 		<xsd:sequence>
-			<xsd:element ref="description" minOccurs="0"/>
+			<xsd:element ref="description" minOccurs="0" />
 			<xsd:choice minOccurs="0" maxOccurs="unbounded">
-				<xsd:element ref="meta"/>
-				<xsd:element ref="constructor-arg"/>
-				<xsd:element ref="property"/>
-				<xsd:element ref="qualifier"/>
-				<xsd:element ref="lookup-method"/>
-				<xsd:element ref="replaced-method"/>
-				<xsd:any namespace="##other" processContents="strict" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="meta" />
+				<xsd:element ref="constructor-arg" />
+				<xsd:element ref="property" />
+				<xsd:element ref="qualifier" />
+				<xsd:element ref="lookup-method" />
+				<xsd:element ref="replaced-method" />
+				<xsd:any namespace="##other" processContents="strict"
+					minOccurs="0" maxOccurs="unbounded" />
 			</xsd:choice>
 		</xsd:sequence>
 	</xsd:group>
@@ -325,7 +329,8 @@
 				]]></xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="lazy-init" default="default" type="defaultable-boolean">
+		<xsd:attribute name="lazy-init" default="default"
+			type="defaultable-boolean">
 			<xsd:annotation>
 				<xsd:documentation><![CDATA[
 	Indicates whether or not this bean is to be lazily initialized.
@@ -384,11 +389,11 @@
 			</xsd:annotation>
 			<xsd:simpleType>
 				<xsd:restriction base="xsd:NMTOKEN">
-					<xsd:enumeration value="default"/>
-					<xsd:enumeration value="no"/>
-					<xsd:enumeration value="byName"/>
-					<xsd:enumeration value="byType"/>
-					<xsd:enumeration value="constructor"/>
+					<xsd:enumeration value="default" />
+					<xsd:enumeration value="no" />
+					<xsd:enumeration value="byName" />
+					<xsd:enumeration value="byType" />
+					<xsd:enumeration value="constructor" />
 				</xsd:restriction>
 			</xsd:simpleType>
 		</xsd:attribute>
@@ -409,7 +414,8 @@
 				]]></xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="autowire-candidate" default="default" type="defaultable-boolean">
+		<xsd:attribute name="autowire-candidate" default="default"
+			type="defaultable-boolean">
 			<xsd:annotation>
 				<xsd:documentation><![CDATA[
 	Indicates whether or not this bean should be considered when looking
@@ -499,7 +505,8 @@
 				]]></xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:anyAttribute namespace="##other" processContents="lax"/>
+		<xsd:anyAttribute namespace="##other"
+			processContents="lax" />
 	</xsd:attributeGroup>
 
 	<xsd:element name="meta" type="metaType">
@@ -529,7 +536,8 @@
 
 	<xsd:element name="bean">
 		<xsd:annotation>
-			<xsd:documentation source="java:org.springframework.beans.factory.config.BeanDefinition"><![CDATA[
+			<xsd:documentation
+				source="java:org.springframework.beans.factory.config.BeanDefinition"><![CDATA[
 	Defines a single (usually named) bean.
 
 	A bean definition may contain nested tags for constructor arguments,
@@ -540,8 +548,8 @@
 		<xsd:complexType>
 			<xsd:complexContent>
 				<xsd:extension base="identifiedType">
-					<xsd:group ref="beanElements"/>
-					<xsd:attributeGroup ref="beanAttributes"/>
+					<xsd:group ref="beanElements" />
+					<xsd:attributeGroup ref="beanAttributes" />
 				</xsd:extension>
 			</xsd:complexContent>
 		</xsd:complexType>
@@ -549,7 +557,8 @@
 
 	<xsd:element name="constructor-arg">
 		<xsd:annotation>
-			<xsd:documentation source="java:org.springframework.beans.factory.config.ConstructorArgumentValues">
+			<xsd:documentation
+				source="java:org.springframework.beans.factory.config.ConstructorArgumentValues">
 				<![CDATA[
 	Bean definitions can specify zero or more constructor arguments.
 	This is an alternative to "autowire constructor".
@@ -566,19 +575,19 @@
 		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:sequence>
-				<xsd:element ref="description" minOccurs="0"/>
+				<xsd:element ref="description" minOccurs="0" />
 				<xsd:choice minOccurs="0" maxOccurs="1">
-					<xsd:element ref="bean"/>
-					<xsd:element ref="ref"/>
-					<xsd:element ref="idref"/>
-					<xsd:element ref="value"/>
-					<xsd:element ref="null"/>
-					<xsd:element ref="array"/>
-					<xsd:element ref="list"/>
-					<xsd:element ref="set"/>
-					<xsd:element ref="map"/>
-					<xsd:element ref="props"/>
-					<xsd:any namespace="##other" processContents="strict"/>
+					<xsd:element ref="bean" />
+					<xsd:element ref="ref" />
+					<xsd:element ref="idref" />
+					<xsd:element ref="value" />
+					<xsd:element ref="null" />
+					<xsd:element ref="array" />
+					<xsd:element ref="list" />
+					<xsd:element ref="set" />
+					<xsd:element ref="map" />
+					<xsd:element ref="props" />
+					<xsd:any namespace="##other" processContents="strict" />
 				</xsd:choice>
 			</xsd:sequence>
 			<xsd:attribute name="index" type="xsd:string">
@@ -646,10 +655,11 @@
 		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:sequence>
-				<xsd:element ref="attribute" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="attribute" minOccurs="0" maxOccurs="unbounded" />
 			</xsd:sequence>
-			<xsd:attribute name="type" type="xsd:string" default="org.springframework.beans.factory.annotation.Qualifier"/>
-			<xsd:attribute name="value" type="xsd:string"/>
+			<xsd:attribute name="type" type="xsd:string"
+				default="org.springframework.beans.factory.annotation.Qualifier" />
+			<xsd:attribute name="value" type="xsd:string" />
 		</xsd:complexType>
 	</xsd:element>
 
@@ -710,7 +720,7 @@
 		<xsd:complexType>
 			<xsd:sequence>
 				<xsd:choice minOccurs="0" maxOccurs="unbounded">
-					<xsd:element ref="arg-type"/>
+					<xsd:element ref="arg-type" />
 				</xsd:choice>
 			</xsd:sequence>
 			<xsd:attribute name="name" type="xsd:string">
@@ -725,7 +735,8 @@
 			</xsd:attribute>
 			<xsd:attribute name="replacer" type="xsd:string">
 				<xsd:annotation>
-					<xsd:documentation source="java:org.springframework.beans.factory.support.MethodReplacer"><![CDATA[
+					<xsd:documentation
+						source="java:org.springframework.beans.factory.support.MethodReplacer"><![CDATA[
 	Bean name of an implementation of the MethodReplacer interface in the
 	current or ancestor factories. This may be a singleton or prototype
 	bean. If it is a prototype, a new instance will be used for each
@@ -744,7 +755,7 @@
 			]]></xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
-			<xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded" />
 			<xsd:attribute name="match" type="xsd:string">
 				<xsd:annotation>
 					<xsd:documentation><![CDATA[
@@ -850,7 +861,7 @@
 			]]></xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
-			<xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded" />
 			<xsd:attribute name="type" type="xsd:string">
 				<xsd:annotation>
 					<xsd:documentation><![CDATA[
@@ -872,26 +883,27 @@
 			]]></xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
-			<xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded" />
 		</xsd:complexType>
 	</xsd:element>
 
 	<!-- Collection Elements -->
 	<xsd:group name="collectionElements">
 		<xsd:sequence>
-			<xsd:element ref="description" minOccurs="0"/>
+			<xsd:element ref="description" minOccurs="0" />
 			<xsd:choice minOccurs="0" maxOccurs="unbounded">
-				<xsd:element ref="bean"/>
-				<xsd:element ref="ref"/>
-				<xsd:element ref="idref"/>
-				<xsd:element ref="value"/>
-				<xsd:element ref="null"/>
-				<xsd:element ref="array"/>
-				<xsd:element ref="list"/>
-				<xsd:element ref="set"/>
-				<xsd:element ref="map"/>
-				<xsd:element ref="props"/>
-				<xsd:any namespace="##other" processContents="strict" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="bean" />
+				<xsd:element ref="ref" />
+				<xsd:element ref="idref" />
+				<xsd:element ref="value" />
+				<xsd:element ref="null" />
+				<xsd:element ref="array" />
+				<xsd:element ref="list" />
+				<xsd:element ref="set" />
+				<xsd:element ref="map" />
+				<xsd:element ref="props" />
+				<xsd:any namespace="##other" processContents="strict"
+					minOccurs="0" maxOccurs="unbounded" />
 			</xsd:choice>
 		</xsd:sequence>
 	</xsd:group>
@@ -907,7 +919,8 @@
 		<xsd:complexType>
 			<xsd:complexContent>
 				<xsd:extension base="listOrSetType">
-					<xsd:attribute name="merge" default="default" type="defaultable-boolean">
+					<xsd:attribute name="merge" default="default"
+						type="defaultable-boolean">
 						<xsd:annotation>
 							<xsd:documentation><![CDATA[
 	Enables/disables merging for collections when using parent/child beans.
@@ -930,7 +943,8 @@
 		<xsd:complexType>
 			<xsd:complexContent>
 				<xsd:extension base="listOrSetType">
-					<xsd:attribute name="merge" default="default" type="defaultable-boolean">
+					<xsd:attribute name="merge" default="default"
+						type="defaultable-boolean">
 						<xsd:annotation>
 							<xsd:documentation><![CDATA[
 	Enables/disables merging for collections when using parent/child beans.
@@ -951,7 +965,8 @@
 		<xsd:complexType>
 			<xsd:complexContent>
 				<xsd:extension base="listOrSetType">
-					<xsd:attribute name="merge" default="default" type="defaultable-boolean">
+					<xsd:attribute name="merge" default="default"
+						type="defaultable-boolean">
 						<xsd:annotation>
 							<xsd:documentation><![CDATA[
 	Enables/disables merging for collections when using parent/child beans.
@@ -972,7 +987,8 @@
 		<xsd:complexType>
 			<xsd:complexContent>
 				<xsd:extension base="mapType">
-					<xsd:attribute name="merge" default="default" type="defaultable-boolean">
+					<xsd:attribute name="merge" default="default"
+						type="defaultable-boolean">
 						<xsd:annotation>
 							<xsd:documentation><![CDATA[
 	Enables/disables merging for collections when using parent/child beans.
@@ -1003,7 +1019,8 @@
 		<xsd:complexType>
 			<xsd:complexContent>
 				<xsd:extension base="propsType">
-					<xsd:attribute name="merge" default="default" type="defaultable-boolean">
+					<xsd:attribute name="merge" default="default"
+						type="defaultable-boolean">
 						<xsd:annotation>
 							<xsd:documentation><![CDATA[
 	Enables/disables merging for collections when using parent/child beans.
@@ -1022,7 +1039,7 @@
 			]]></xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
-			<xsd:group ref="collectionElements"/>
+			<xsd:group ref="collectionElements" />
 		</xsd:complexType>
 	</xsd:element>
 
@@ -1034,7 +1051,7 @@
 			]]></xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType mixed="true">
-			<xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded" />
 			<xsd:attribute name="key" type="xsd:string" use="required">
 				<xsd:annotation>
 					<xsd:documentation><![CDATA[
@@ -1047,20 +1064,20 @@
 
 	<xsd:complexType name="propertyType">
 		<xsd:sequence>
-			<xsd:element ref="description" minOccurs="0"/>
+			<xsd:element ref="description" minOccurs="0" />
 			<xsd:choice minOccurs="0" maxOccurs="1">
-				<xsd:element ref="meta"/>
-				<xsd:element ref="bean"/>
-				<xsd:element ref="ref"/>
-				<xsd:element ref="idref"/>
-				<xsd:element ref="value"/>
-				<xsd:element ref="null"/>
-				<xsd:element ref="array"/>
-				<xsd:element ref="list"/>
-				<xsd:element ref="set"/>
-				<xsd:element ref="map"/>
-				<xsd:element ref="props"/>
-				<xsd:any namespace="##other" processContents="strict"/>
+				<xsd:element ref="meta" />
+				<xsd:element ref="bean" />
+				<xsd:element ref="ref" />
+				<xsd:element ref="idref" />
+				<xsd:element ref="value" />
+				<xsd:element ref="null" />
+				<xsd:element ref="array" />
+				<xsd:element ref="list" />
+				<xsd:element ref="set" />
+				<xsd:element ref="map" />
+				<xsd:element ref="props" />
+				<xsd:any namespace="##other" processContents="strict" />
 			</xsd:choice>
 		</xsd:sequence>
 		<xsd:attribute name="name" type="xsd:string" use="required">
@@ -1104,7 +1121,7 @@
 	<xsd:complexType name="listOrSetType">
 		<xsd:complexContent>
 			<xsd:extension base="collectionType">
-				<xsd:group ref="collectionElements"/>
+				<xsd:group ref="collectionElements" />
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -1114,9 +1131,9 @@
 		<xsd:complexContent>
 			<xsd:extension base="collectionType">
 				<xsd:sequence>
-					<xsd:element ref="description" minOccurs="0"/>
+					<xsd:element ref="description" minOccurs="0" />
 					<xsd:choice minOccurs="0" maxOccurs="unbounded">
-						<xsd:element ref="entry"/>
+						<xsd:element ref="entry" />
 					</xsd:choice>
 				</xsd:sequence>
 				<xsd:attribute name="key-type" type="xsd:string">
@@ -1134,8 +1151,8 @@
 	<!-- 'entry' element type -->
 	<xsd:complexType name="entryType">
 		<xsd:sequence>
-			<xsd:element ref="key" minOccurs="0"/>
-			<xsd:group ref="collectionElements"/>
+			<xsd:element ref="key" minOccurs="0" />
+			<xsd:group ref="collectionElements" />
 		</xsd:sequence>
 		<xsd:attribute name="key" type="xsd:string">
 			<xsd:annotation>
@@ -1184,7 +1201,7 @@
 			<xsd:extension base="collectionType">
 				<xsd:sequence>
 					<xsd:choice minOccurs="0" maxOccurs="unbounded">
-						<xsd:element ref="prop"/>
+						<xsd:element ref="prop" />
 					</xsd:choice>
 				</xsd:sequence>
 			</xsd:extension>
@@ -1194,9 +1211,9 @@
 	<!-- simple internal types -->
 	<xsd:simpleType name="defaultable-boolean">
 		<xsd:restriction base="xsd:NMTOKEN">
-			<xsd:enumeration value="default"/>
-			<xsd:enumeration value="true"/>
-			<xsd:enumeration value="false"/>
+			<xsd:enumeration value="default" />
+			<xsd:enumeration value="true" />
+			<xsd:enumeration value="false" />
 		</xsd:restriction>
 	</xsd:simpleType>
 

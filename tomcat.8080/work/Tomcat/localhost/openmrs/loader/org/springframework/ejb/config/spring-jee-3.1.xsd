@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
 <xsd:schema xmlns="http://www.springframework.org/schema/jee"
-		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-		xmlns:beans="http://www.springframework.org/schema/beans"
-		xmlns:tool="http://www.springframework.org/schema/tool"
-		targetNamespace="http://www.springframework.org/schema/jee"
-		elementFormDefault="qualified"
-		attributeFormDefault="unqualified">
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:tool="http://www.springframework.org/schema/tool"
+	targetNamespace="http://www.springframework.org/schema/jee"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
 
-	<xsd:import namespace="http://www.springframework.org/schema/beans" schemaLocation="http://www.springframework.org/schema/beans/spring-beans-3.1.xsd"/>
-	<xsd:import namespace="http://www.springframework.org/schema/tool" schemaLocation="http://www.springframework.org/schema/tool/spring-tool-3.1.xsd"/>
+	<xsd:import namespace="http://www.springframework.org/schema/beans"
+		schemaLocation="http://www.springframework.org/schema/beans/spring-beans-3.1.xsd" />
+	<xsd:import namespace="http://www.springframework.org/schema/tool"
+		schemaLocation="http://www.springframework.org/schema/tool/spring-tool-3.1.xsd" />
 
 	<xsd:annotation>
 		<xsd:documentation><![CDATA[
@@ -20,14 +20,16 @@
 
 	<xsd:element name="jndi-lookup">
 		<xsd:annotation>
-			<xsd:documentation source="java:org.springframework.jndi.JndiObjectFactoryBean"><![CDATA[
+			<xsd:documentation
+				source="java:org.springframework.jndi.JndiObjectFactoryBean"><![CDATA[
 	Exposes an object reference via a JNDI lookup.
 			]]></xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:complexContent>
 				<xsd:extension base="jndiLocatingType">
-					<xsd:attribute name="cache" type="xsd:boolean" default="true">
+					<xsd:attribute name="cache" type="xsd:boolean"
+						default="true">
 						<xsd:annotation>
 							<xsd:documentation><![CDATA[
 	Controls whether the object returned from the JNDI lookup is cached
@@ -43,7 +45,8 @@
 							]]></xsd:documentation>
 						</xsd:annotation>
 					</xsd:attribute>
-					<xsd:attribute name="lookup-on-startup" type="xsd:boolean" default="true">
+					<xsd:attribute name="lookup-on-startup" type="xsd:boolean"
+						default="true">
 						<xsd:annotation>
 							<xsd:documentation><![CDATA[
 	Controls whether the JNDI lookup is performed immediately on startup
@@ -64,7 +67,7 @@
 							]]></xsd:documentation>
 							<xsd:appinfo>
 								<tool:annotation>
-									<tool:expected-type type="java.lang.Class"/>
+									<tool:expected-type type="java.lang.Class" />
 								</tool:annotation>
 							</xsd:appinfo>
 						</xsd:annotation>
@@ -97,7 +100,8 @@
 
 	<xsd:element name="local-slsb" type="ejbType">
 		<xsd:annotation>
-			<xsd:documentation source="java:org.springframework.ejb.access.LocalStatelessSessionProxyFactoryBean"><![CDATA[
+			<xsd:documentation
+				source="java:org.springframework.ejb.access.LocalStatelessSessionProxyFactoryBean"><![CDATA[
 	Exposes a reference to a local EJB Stateless SessionBean.
 			]]></xsd:documentation>
 		</xsd:annotation>
@@ -105,7 +109,8 @@
 
 	<xsd:element name="remote-slsb">
 		<xsd:annotation>
-			<xsd:documentation source="java:org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean"><![CDATA[
+			<xsd:documentation
+				source="java:org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean"><![CDATA[
 	Exposes a reference to a remote EJB Stateless SessionBean.
 			]]></xsd:documentation>
 		</xsd:annotation>
@@ -121,7 +126,8 @@
 							]]></xsd:documentation>
 						</xsd:annotation>
 					</xsd:attribute>
-					<xsd:attribute name="refresh-home-on-connect-failure" type="xsd:boolean" default="false">
+					<xsd:attribute name="refresh-home-on-connect-failure"
+						type="xsd:boolean" default="false">
 						<xsd:annotation>
 							<xsd:documentation><![CDATA[
 	Controls whether to refresh the EJB home on connect failure.
@@ -133,7 +139,8 @@
 							]]></xsd:documentation>
 						</xsd:annotation>
 					</xsd:attribute>
-					<xsd:attribute name="cache-session-bean" type="xsd:boolean" default="false">
+					<xsd:attribute name="cache-session-bean" type="xsd:boolean"
+						default="false">
 						<xsd:annotation>
 							<xsd:documentation><![CDATA[
 	Controls whether to cache the actual session bean object.
@@ -154,7 +161,8 @@
 		<xsd:complexContent>
 			<xsd:extension base="beans:identifiedType">
 				<xsd:sequence>
-					<xsd:element name="environment" minOccurs="0" maxOccurs="1">
+					<xsd:element name="environment" minOccurs="0"
+						maxOccurs="1">
 						<xsd:annotation>
 							<xsd:documentation><![CDATA[
 	The newline-separated, key-value pairs for the JNDI environment
@@ -162,7 +170,7 @@
 						 ]]></xsd:documentation>
 						</xsd:annotation>
 						<xsd:simpleType>
-							<xsd:restriction base="xsd:string"/>
+							<xsd:restriction base="xsd:string" />
 						</xsd:simpleType>
 					</xsd:element>
 				</xsd:sequence>
@@ -183,7 +191,8 @@
 						]]></xsd:documentation>
 					</xsd:annotation>
 				</xsd:attribute>
-				<xsd:attribute name="resource-ref" type="xsd:boolean" default="true">
+				<xsd:attribute name="resource-ref" type="xsd:boolean"
+					default="true">
 					<xsd:annotation>
 						<xsd:documentation><![CDATA[
 	Controls whether the lookup occurs in a Java EE container, i.e. if the
@@ -192,7 +201,8 @@
 						]]></xsd:documentation>
 					</xsd:annotation>
 				</xsd:attribute>
-				<xsd:attribute name="expose-access-context" type="xsd:boolean" default="false">
+				<xsd:attribute name="expose-access-context" type="xsd:boolean"
+					default="false">
 					<xsd:annotation>
 						<xsd:documentation><![CDATA[
 	Set whether to expose the JNDI environment context for all access to the target
@@ -205,7 +215,8 @@
 						]]></xsd:documentation>
 					</xsd:annotation>
 				</xsd:attribute>
-				<xsd:attribute name="lazy-init" default="default" type="beans:defaultable-boolean">
+				<xsd:attribute name="lazy-init" default="default"
+					type="beans:defaultable-boolean">
 					<xsd:annotation>
 						<xsd:documentation><![CDATA[
 	Indicates whether or not this bean is to be lazily initialized.
@@ -225,7 +236,8 @@
 	<xsd:complexType name="ejbType">
 		<xsd:complexContent>
 			<xsd:extension base="jndiLocatingType">
-				<xsd:attribute name="lookup-home-on-startup" type="xsd:boolean" default="true">
+				<xsd:attribute name="lookup-home-on-startup" type="xsd:boolean"
+					default="true">
 					<xsd:annotation>
 						<xsd:documentation><![CDATA[
 	Controls whether the lookup of the EJB home object is performed
@@ -234,7 +246,8 @@
 						]]></xsd:documentation>
 					</xsd:annotation>
 				</xsd:attribute>
-				<xsd:attribute name="cache-home" type="xsd:boolean" default="true">
+				<xsd:attribute name="cache-home" type="xsd:boolean"
+					default="true">
 					<xsd:annotation>
 						<xsd:documentation><![CDATA[
 	Controls whether the EJB home object is cached once it has been located.
@@ -242,7 +255,8 @@
 						]]></xsd:documentation>
 					</xsd:annotation>
 				</xsd:attribute>
-				<xsd:attribute name="business-interface" type="xsd:string" use="required">
+				<xsd:attribute name="business-interface" type="xsd:string"
+					use="required">
 					<xsd:annotation>
 						<xsd:documentation source="java:java.lang.Class"><![CDATA[
 	The business interface of the EJB being proxied.
@@ -257,11 +271,11 @@
 		<xsd:annotation>
 			<xsd:appinfo>
 				<tool:annotation kind="ref">
-					<tool:expected-type type="java.util.Properties"/>
+					<tool:expected-type type="java.util.Properties" />
 				</tool:annotation>
 			</xsd:appinfo>
 		</xsd:annotation>
-		<xsd:union memberTypes="xsd:string"/>
+		<xsd:union memberTypes="xsd:string" />
 	</xsd:simpleType>
 
 </xsd:schema>

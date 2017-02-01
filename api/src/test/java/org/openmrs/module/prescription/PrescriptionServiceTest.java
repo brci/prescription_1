@@ -7,7 +7,9 @@
  * Copyright (C) OpenMRS Inc. OpenMRS is a registered trademark and the OpenMRS
  * graphic logo is a trademark of OpenMRS Inc.
  */
-package org.openmrs.module.prescription.api;
+package org.openmrs.module.prescription;
+
+import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -16,48 +18,45 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.openmrs.User;
 import org.openmrs.api.UserService;
-import org.openmrs.module.prescription.Prescription;
 import org.openmrs.module.prescription.api.dao.PrescriptionDao;
 import org.openmrs.module.prescription.api.impl.PrescriptionServiceImpl;
-import static org.mockito.Mockito.*;
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
 
 /**
- * This is a unit test, which verifies logic in PrescriptionService. It doesn't extend
- * BaseModuleContextSensitiveTest, thus it is run without the in-memory DB and Spring context.
+ * This is a unit test, which verifies logic in PrescriptionService. It doesn't
+ * extend BaseModuleContextSensitiveTest, thus it is run without the in-memory
+ * DB and Spring context.
  */
 public class PrescriptionServiceTest {
-	
+
 	@InjectMocks
 	PrescriptionServiceImpl basicModuleService;
-	
+
 	@Mock
 	PrescriptionDao dao;
-	
+
 	@Mock
 	UserService userService;
-	
+
 	@Before
 	public void setupMocks() {
 		MockitoAnnotations.initMocks(this);
 	}
-	
+
 	@Test
 	public void saveItem_shouldSetOwnerIfNotSet() {
-		//Given
+		// Given
 		Prescription item = new Prescription();
 		item.setDescription("some description");
-		
+
 		when(dao.saveItem(item)).thenReturn(item);
-		
+
 		User user = new User();
 		when(userService.getUser(1)).thenReturn(user);
-		
-		//When
+
+		// When
 		basicModuleService.saveItem(item);
-		
-		//Then
-		//assertThat(item, hasProperty("owner", is(user)));
+
+		// Then
+		// assertThat(item, hasProperty("owner", is(user)));
 	}
 }

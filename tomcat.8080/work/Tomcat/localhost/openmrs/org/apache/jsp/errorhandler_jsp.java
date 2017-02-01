@@ -21,59 +21,61 @@ import org.openmrs.api.context.Context;
 import org.apache.commons.logging.LogFactory;
 
 public final class errorhandler_jsp extends org.apache.jasper.runtime.HttpJspBase
-    implements org.apache.jasper.runtime.JspSourceDependent {
+		implements org.apache.jasper.runtime.JspSourceDependent {
 
-  private static final javax.servlet.jsp.JspFactory _jspxFactory =
-          javax.servlet.jsp.JspFactory.getDefaultFactory();
+	private static final javax.servlet.jsp.JspFactory _jspxFactory = javax.servlet.jsp.JspFactory.getDefaultFactory();
 
-  private static java.util.Map<java.lang.String,java.lang.Long> _jspx_dependants;
+	private static java.util.Map<java.lang.String, java.lang.Long> _jspx_dependants;
 
-  static {
-    _jspx_dependants = new java.util.HashMap<java.lang.String,java.lang.Long>(2);
-    _jspx_dependants.put("/WEB-INF/taglibs/openmrs.tld", Long.valueOf(1460400300000L));
-    _jspx_dependants.put("/WEB-INF/view/authorizationHandlerInclude.jsp", Long.valueOf(1460400300000L));
-  }
+	static {
+		_jspx_dependants = new java.util.HashMap<java.lang.String, java.lang.Long>(2);
+		_jspx_dependants.put("/WEB-INF/taglibs/openmrs.tld", Long.valueOf(1460400300000L));
+		_jspx_dependants.put("/WEB-INF/view/authorizationHandlerInclude.jsp", Long.valueOf(1460400300000L));
+	}
 
-  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fopenmrs_005fextensionPoint_0026_005ftype_005fpointId_005fnobody;
+	private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fopenmrs_005fextensionPoint_0026_005ftype_005fpointId_005fnobody;
 
-  private volatile javax.el.ExpressionFactory _el_expressionfactory;
-  private volatile org.apache.tomcat.InstanceManager _jsp_instancemanager;
+	private volatile javax.el.ExpressionFactory _el_expressionfactory;
+	private volatile org.apache.tomcat.InstanceManager _jsp_instancemanager;
 
-  public java.util.Map<java.lang.String,java.lang.Long> getDependants() {
-    return _jspx_dependants;
-  }
+	public java.util.Map<java.lang.String, java.lang.Long> getDependants() {
+		return _jspx_dependants;
+	}
 
-  public javax.el.ExpressionFactory _jsp_getExpressionFactory() {
-    if (_el_expressionfactory == null) {
-      synchronized (this) {
-        if (_el_expressionfactory == null) {
-          _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
-        }
-      }
-    }
-    return _el_expressionfactory;
-  }
+	public javax.el.ExpressionFactory _jsp_getExpressionFactory() {
+		if (_el_expressionfactory == null) {
+			synchronized (this) {
+				if (_el_expressionfactory == null) {
+					_el_expressionfactory = _jspxFactory
+							.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
+				}
+			}
+		}
+		return _el_expressionfactory;
+	}
 
-  public org.apache.tomcat.InstanceManager _jsp_getInstanceManager() {
-    if (_jsp_instancemanager == null) {
-      synchronized (this) {
-        if (_jsp_instancemanager == null) {
-          _jsp_instancemanager = org.apache.jasper.runtime.InstanceManagerFactory.getInstanceManager(getServletConfig());
-        }
-      }
-    }
-    return _jsp_instancemanager;
-  }
+	public org.apache.tomcat.InstanceManager _jsp_getInstanceManager() {
+		if (_jsp_instancemanager == null) {
+			synchronized (this) {
+				if (_jsp_instancemanager == null) {
+					_jsp_instancemanager = org.apache.jasper.runtime.InstanceManagerFactory
+							.getInstanceManager(getServletConfig());
+				}
+			}
+		}
+		return _jsp_instancemanager;
+	}
 
-  public void _jspInit() {
-    _005fjspx_005ftagPool_005fopenmrs_005fextensionPoint_0026_005ftype_005fpointId_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
-  }
+	public void _jspInit() {
+		_005fjspx_005ftagPool_005fopenmrs_005fextensionPoint_0026_005ftype_005fpointId_005fnobody = org.apache.jasper.runtime.TagHandlerPool
+				.getTagHandlerPool(getServletConfig());
+	}
 
-  public void _jspDestroy() {
-    _005fjspx_005ftagPool_005fopenmrs_005fextensionPoint_0026_005ftype_005fpointId_005fnobody.release();
-  }
+	public void _jspDestroy() {
+		_005fjspx_005ftagPool_005fopenmrs_005fextensionPoint_0026_005ftype_005fpointId_005fnobody.release();
+	}
 
-  public void _jspService(final javax.servlet.http.HttpServletRequest request, final javax.servlet.http.HttpServletResponse response)
+	public void _jspService(final javax.servlet.http.HttpServletRequest request, final javax.servlet.http.HttpServletResponse response)
         throws java.io.IOException, javax.servlet.ServletException {
 
     final javax.servlet.jsp.PageContext pageContext;
@@ -216,24 +218,31 @@ org.openmrs.api.context.Context.closeSession();
     }
   }
 
-  private boolean _jspx_meth_openmrs_005fextensionPoint_005f0(javax.servlet.jsp.PageContext _jspx_page_context)
-          throws java.lang.Throwable {
-    javax.servlet.jsp.PageContext pageContext = _jspx_page_context;
-    javax.servlet.jsp.JspWriter out = _jspx_page_context.getOut();
-    //  openmrs:extensionPoint
-    org.openmrs.module.web.taglib.ExtensionPointTag _jspx_th_openmrs_005fextensionPoint_005f0 = (org.openmrs.module.web.taglib.ExtensionPointTag) _005fjspx_005ftagPool_005fopenmrs_005fextensionPoint_0026_005ftype_005fpointId_005fnobody.get(org.openmrs.module.web.taglib.ExtensionPointTag.class);
-    _jspx_th_openmrs_005fextensionPoint_005f0.setPageContext(_jspx_page_context);
-    _jspx_th_openmrs_005fextensionPoint_005f0.setParent(null);
-    // /errorhandler.jsp(33,0) name = pointId type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_openmrs_005fextensionPoint_005f0.setPointId("org.openmrs.errorHandler");
-    // /errorhandler.jsp(33,0) name = type type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_openmrs_005fextensionPoint_005f0.setType("html");
-    int _jspx_eval_openmrs_005fextensionPoint_005f0 = _jspx_th_openmrs_005fextensionPoint_005f0.doStartTag();
-    if (_jspx_th_openmrs_005fextensionPoint_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fopenmrs_005fextensionPoint_0026_005ftype_005fpointId_005fnobody.reuse(_jspx_th_openmrs_005fextensionPoint_005f0);
-      return true;
-    }
-    _005fjspx_005ftagPool_005fopenmrs_005fextensionPoint_0026_005ftype_005fpointId_005fnobody.reuse(_jspx_th_openmrs_005fextensionPoint_005f0);
-    return false;
-  }
+	private boolean _jspx_meth_openmrs_005fextensionPoint_005f0(javax.servlet.jsp.PageContext _jspx_page_context)
+			throws java.lang.Throwable {
+		javax.servlet.jsp.PageContext pageContext = _jspx_page_context;
+		javax.servlet.jsp.JspWriter out = _jspx_page_context.getOut();
+		// openmrs:extensionPoint
+		org.openmrs.module.web.taglib.ExtensionPointTag _jspx_th_openmrs_005fextensionPoint_005f0 = (org.openmrs.module.web.taglib.ExtensionPointTag) _005fjspx_005ftagPool_005fopenmrs_005fextensionPoint_0026_005ftype_005fpointId_005fnobody
+				.get(org.openmrs.module.web.taglib.ExtensionPointTag.class);
+		_jspx_th_openmrs_005fextensionPoint_005f0.setPageContext(_jspx_page_context);
+		_jspx_th_openmrs_005fextensionPoint_005f0.setParent(null);
+		// /errorhandler.jsp(33,0) name = pointId type = null reqTime = true
+		// required = true fragment = false deferredValue = false
+		// expectedTypeName = null deferredMethod = false methodSignature = null
+		_jspx_th_openmrs_005fextensionPoint_005f0.setPointId("org.openmrs.errorHandler");
+		// /errorhandler.jsp(33,0) name = type type = null reqTime = true
+		// required = false fragment = false deferredValue = false
+		// expectedTypeName = null deferredMethod = false methodSignature = null
+		_jspx_th_openmrs_005fextensionPoint_005f0.setType("html");
+		int _jspx_eval_openmrs_005fextensionPoint_005f0 = _jspx_th_openmrs_005fextensionPoint_005f0.doStartTag();
+		if (_jspx_th_openmrs_005fextensionPoint_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+			_005fjspx_005ftagPool_005fopenmrs_005fextensionPoint_0026_005ftype_005fpointId_005fnobody
+					.reuse(_jspx_th_openmrs_005fextensionPoint_005f0);
+			return true;
+		}
+		_005fjspx_005ftagPool_005fopenmrs_005fextensionPoint_0026_005ftype_005fpointId_005fnobody
+				.reuse(_jspx_th_openmrs_005fextensionPoint_005f0);
+		return false;
+	}
 }
