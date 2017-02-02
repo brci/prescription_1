@@ -71,7 +71,7 @@ public class PrescriptionsPageController {
 		if (StringUtils.isNotBlank(action)) {
 			try {
 				System.out.println("Log: post action " + action);
-									
+				
 				if ("print".equals(action)) {
 					
 					if (pIds != null) {

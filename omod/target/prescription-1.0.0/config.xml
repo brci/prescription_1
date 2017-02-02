@@ -16,7 +16,7 @@
 	<package>org.openmrs.module.prescription</package>
 	<author>bci</author>
 	<description>
-		Module allows to add medications as a list, and print them. Medication-list is taken of a csv-file. To change it, and the location of prescriptions, please change the config.properties.
+		Module allows to add medications as a list, and print them. Medication-list is taken of a csv-file. To change it, please see and change the config.properties.
 	</description>
 
 	<activator>org.openmrs.module.prescription.PrescriptionActivator</activator>

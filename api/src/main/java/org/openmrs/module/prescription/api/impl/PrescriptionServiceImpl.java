@@ -53,7 +53,7 @@ public class PrescriptionServiceImpl extends BaseOpenmrsService implements Presc
 	public boolean deleteItem(Prescription item) throws APIException {
 		return this.dao.deleteItem(item);
 	}
-		
+	
 	@Transactional(readOnly = true)
 	public List<Prescription> getAllPrescriptions(Patient patient) throws APIException, IllegalArgumentException {
 		if (patient == null) {

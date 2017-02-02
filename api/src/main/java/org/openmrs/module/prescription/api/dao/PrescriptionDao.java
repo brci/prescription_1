@@ -114,7 +114,7 @@ public class PrescriptionDao {
 		catch (DAOException d) {
 			d.printStackTrace();
 			return items;
-		}		
-	}	
+		}
+	}
 	
 }

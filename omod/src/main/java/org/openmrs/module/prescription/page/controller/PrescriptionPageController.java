@@ -20,14 +20,13 @@ import org.openmrs.ui.framework.annotation.SpringBean;
 import org.openmrs.ui.framework.page.PageModel;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 public class PrescriptionPageController {
 	
 	public void controller(@RequestParam("patientId") Patient patient,
 	        @RequestParam(value = "prescriptionId", required = false) Integer prescriptionId,
 	        @RequestParam(value = "returnUrl", required = false) String returnUrl, PageModel model,
 	        @SpringBean("prescription.PrescriptionService") PrescriptionService service, UiUtils ui) {
-			
+		
 		if (StringUtils.isBlank(returnUrl)) {
 			returnUrl = ui.pageLink("coreapps", "clinicianfacing/patient",
 			    Collections.singletonMap("patientId", (Object) patient.getId()));
