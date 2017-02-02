@@ -9,14 +9,10 @@
  */
 package org.openmrs.module.prescription.web.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.openmrs.User;
 import org.openmrs.api.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -76,6 +72,7 @@ public class PrescriptionController {
 	 * pojo. The bean name defined in the ModelAttribute annotation and the type can be just defined
 	 * by the return type of this method
 	 */
+	/*
 	@ModelAttribute("users")
 	protected List<User> getUsers() throws Exception {
 		List<User> users = new ArrayList();// userService.getAllUsers();
@@ -85,5 +82,6 @@ public class PrescriptionController {
 		// that is defined in the @ModuleAttribute tag
 		return users;
 	}
+	*/
 	
 }

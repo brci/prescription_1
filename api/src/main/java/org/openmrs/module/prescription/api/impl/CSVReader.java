@@ -18,6 +18,7 @@ public class CSVReader {
 		
 		List<Drug> medications = null;
 		
+			
 		try {
 			ClassLoader classLoader = getClass().getClassLoader();
 			File file = new File(classLoader.getResource(csvFile).getFile());
@@ -47,11 +48,13 @@ public class CSVReader {
 					exc.printStackTrace();
 				}
 			}
+			br.close();
 			
 		}
 		catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 		return medications;
 	}
 	

@@ -58,9 +58,7 @@ public interface PrescriptionService extends OpenmrsService {
 	@Authorized(PrescriptionConfig.MODIFY_PRESCRIPTION_PRIVILEGE)
 	@Transactional
 	boolean deleteItem(Prescription item) throws APIException;
-	
-	public boolean deleteItemFile(Prescription item) throws APIException;
-	
+		
 	@Authorized
 	public List<Prescription> getAllPrescriptions(Patient var1) throws APIException, IllegalArgumentException;
 	

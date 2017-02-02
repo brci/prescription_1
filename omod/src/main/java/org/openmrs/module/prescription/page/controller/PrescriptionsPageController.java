@@ -38,7 +38,6 @@ public class PrescriptionsPageController {
 				if ("remove".equals(action)) {
 					Prescription prescription = service.getItemById(prescriptionId);
 					service.deleteItem(prescription);
-					service.deleteItemFile(prescription);
 				}
 			}
 			catch (Exception e) {
@@ -72,15 +71,7 @@ public class PrescriptionsPageController {
 		if (StringUtils.isNotBlank(action)) {
 			try {
 				System.out.println("Log: post action " + action);
-				
-				// don't understand why the controller action is taken, not post
-				// .. however.
-				/*
-				 * if ("remove".equals(action)) { Prescription prescription =
-				 * service.getItemById(prescriptionId);
-				 * service.deleteItem(prescription); }
-				 */
-				
+									
 				if ("print".equals(action)) {
 					
 					if (pIds != null) {
@@ -96,11 +87,7 @@ public class PrescriptionsPageController {
 							DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HHmm");
 							Calendar cal = Calendar.getInstance();
 							String prescriptionFileName = dateFormat.format(cal.getTime()); // 2014/08/06
-							                                                                // 16:00:22
-							
-							String patientName = patient.getPerson().getFamilyName() + "_"
-							        + patient.getPerson().getGivenName();
-							
+							                                                                // 16:00:22											
 							for (int i = 0; i < pIds.length; i++) {
 								System.out.println("" + pIds[i]);
 								

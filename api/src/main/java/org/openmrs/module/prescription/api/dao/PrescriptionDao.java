@@ -114,32 +114,7 @@ public class PrescriptionDao {
 		catch (DAOException d) {
 			d.printStackTrace();
 			return items;
-		}
-		
-	}
-	
-	public boolean getPrescriptionFileInUse(String fileName) {
-		
-		// default true, then, the file is not deleted - must be checked
-		// manually, if so
-		
-		try {
-			String sql = "SELECT count(*) prescription_file from prescription p where p.prescription_file = :p_file ";
-			sql = sql + " AND prescription_file IS NOT NULL";
-			
-			SQLQuery query = this.sessionFactory.getCurrentSession().createSQLQuery(sql);
-			
-			query.setParameter("p_file", fileName);
-			
-			int count = ((Number) query.uniqueResult()).intValue();
-			
-			return (count > 0);
-		}
-		catch (DAOException d) {
-			d.printStackTrace();
-		}
-		
-		return true;
-	}
+		}		
+	}	
 	
 }

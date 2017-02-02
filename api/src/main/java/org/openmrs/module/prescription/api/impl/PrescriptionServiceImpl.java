@@ -54,29 +54,7 @@ public class PrescriptionServiceImpl extends BaseOpenmrsService implements Presc
 	public boolean deleteItem(Prescription item) throws APIException {
 		return this.dao.deleteItem(item);
 	}
-	
-	public boolean deleteItemFile(Prescription item) throws APIException {
-		String fileName = item.getPrescriptionFile();
 		
-		try {
-			if (!dao.getPrescriptionFileInUse(fileName)) {
-				
-				if (properties == null) {
-					PropertiesReader propertiesReader = new PropertiesReader();
-					properties = propertiesReader.readProperties();
-				}
-				File file = new File(properties.getProperty("prescription_file_path") + fileName + ".pdf");
-				
-				file.delete();
-			}
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-			return false;
-		}
-		return true;
-	}
-	
 	@Transactional(readOnly = true)
 	public List<Prescription> getAllPrescriptions(Patient patient) throws APIException, IllegalArgumentException {
 		if (patient == null) {
