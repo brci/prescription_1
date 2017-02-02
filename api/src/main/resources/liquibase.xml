@@ -29,12 +29,14 @@
 				<constraints nullable="false" unique="true"></constraints>
 			</column>
 			<!-- <column name="owner" type="int" / -->
-
-			<column name="description" type="varchar(255)" />
+			
 			<column name="patient_id" type="int" />
 			<column name="drug_id" type="int" />
+			
+			<column name="description" type="varchar(255)" />
 			<column name="dose" type="varchar(255)" />
 			<column name="advice" type="varchar(255)" />
+			
 			<column name="prescription_date_created" type="datetime" />
 			<column name="prescription_file" type="varchar(255)" />
 
