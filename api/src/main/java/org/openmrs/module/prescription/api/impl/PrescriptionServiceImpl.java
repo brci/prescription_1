@@ -1,6 +1,5 @@
 package org.openmrs.module.prescription.api.impl;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
